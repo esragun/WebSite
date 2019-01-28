@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewBag.Title = "YasalUyari";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<style>
+    h2 {
+        color: darkgreen;
+        border-bottom: 1px solid darkseagreen;
+    }
+    p{
+        color:#458B74;
+        margin:auto;
+        font-size:medium;
+    }
+</style>
+
+<section class="banner-area relative" id="home">
+    <div class="overlay overlay-bg"></div>
+    <div class="container">
+        <div class="row d-flex align-items-center justify-content-center">
+            <div class="about-content col-lg-12">
+                <h1 class="yaziRenk">
+                    Yasal Uyarı
+                </h1>
+                <p class="yaziRenk link-nav text-center">@Html.ActionLink("Anasayfa", "Index", "Home", new { veri = ViewBag.IDi }, null)<span class="lnr lnr-arrow-right"></span>@Html.ActionLink("Yasal Uyarı", "YasalUyari", "Footer", new { veri = ViewBag.ID }, null)</p>
+                @*<p class="text-white link-nav"><a href="Index">Anasayfa </a>  <span class="lnr lnr-arrow-right"></span>  <a href="Hakkımızda"> Hakkımızda</a></p>*@
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="feature-area section-gap">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 div">
+                <div class="single-feature">
+                    <div class="col-lg-12">
+                            <h2>Yasal Uyarı  </h2>
+                        <br />
+                                <p>
+                                    Bu Web Sitesi içeriğine ilişkin her türlü ses, görüntü, yazı içeren bilgi, belge ve her türlü fikri ve sınai haklar ile tüm telif hakları ve diğer fikri ve sınai mülkiyet hakları Alternatif dağıtım Tic ltd şti ‘ye aittir.
+                                </p>
+                                <p>
+                                    Internet sitesinde bulunan hiçbir bilgi; önceden izin alınmadan ve kaynak gösterilmeden, kod ve yazılım da dahil olmak üzere, değiştirilemez, kopyalanamaz, çoğaltılamaz, başka bir lisana çevrilemez, yeniden yayımlanamaz, başka bir bilgisayara yüklenemez, postalanamaz, iletilemez, sunulamaz ya da dağıtılamaz. Sitenin bütünü veya bir kısmı kaynak gösterilmeden başka bir web sitesinde izinsiz olarak kullanılamaz. Alternatif dağıtım Tic ltd şti sitesinde vermiş olduğu linklerin içeriğinden sorumlu değildir.
+                                </p>
+                                <p>
+                                    Web sitemize yapılacak olan sanal saldırılarda ve yasalara uygun olmayan davranışların tespiti halinde gerekli yasal işlem başlatılacaktır.
+                                </p>                      
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

@@ -1,0 +1,152 @@
+﻿
+@{
+    ViewBag.Title = "KisiselVerilerinKorunmasi";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+<style>
+    h2 {
+        color: darkgreen;
+        border-bottom: 1px solid darkseagreen;
+    }
+
+    p,ol {
+        color:#458B74;
+        margin:auto;
+        font-size:medium;
+    }
+    .onemliIcerik{
+    font-size:medium;
+    color:darkgreen;
+    font-style:italic;
+}
+</style>
+
+<section class="banner-area relative" id="home">
+    <div class="overlay overlay-bg"></div>
+    <div class="container">
+        <div class="row d-flex align-items-center justify-content-center">
+            <div class="about-content col-lg-12">
+                <h1 class="yaziRenk">
+                    Kişisel Verilerin Korunması
+                </h1>
+                <p class="yaziRenk link-nav text-center">@Html.ActionLink("Anasayfa", "Index", "Home", new { veri = ViewBag.IDi }, null)<span class="lnr lnr-arrow-right"></span>@Html.ActionLink("Kişisel Verilerin Korunması", "KisiselVerilerinKorunmasi", "Footer", new { veri = ViewBag.ID }, null)</p>
+                @*<p class="text-white link-nav"><a href="Index">Anasayfa </a>  <span class="lnr lnr-arrow-right"></span>  <a href="Hakkımızda"> Hakkımızda</a></p>*@
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="feature-area section-gap">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 div">
+                <div class="single-feature">
+                    <div class="col-lg-12">
+                            <h2>Kişisel Verileri Korunması</h2>
+                        <p>
+                            Alternatif Dağıtım Taşımacılık Kurye Hizmetleri Ltd Şti. (“Traffic Kurye”) olarak kişisel verilerinizin güvenliği hususuna azami hassasiyet göstermekteyiz. Traffic Kurye olarak hizmetlerimizden faydalanan kişiler dahil, Traffic Kurye ile ilişkili tüm şahıslara ait her türlü kişisel verilerin 6698 sayılı Kişisel Verilerin Korunması Kanunu (“KVKK”)’na uygun olarak kişisel verilerinizin güvenli şekilde muhafazasını, hukuka uygun olarak işlenmesini ve erişilmesini sağlamak için bütün teknolojik ve alt yapısal imkanlarını kullanarak, gerekli tüm teknik ve idari tedbirleri almakta, bu sorumluluğumuzun tam bilinci ile KVKK Kanunu uyarınca “Veri Sorumlusu” sıfatıyla, kişisel verilerinizi aşağıda yer alan kapsamda ve şartlarda işlemekteyiz.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-lg-12 col-md-12 div">
+                <div class="single-feature">
+                    <div class="col-lg-12">
+                            <h2>Kişisel Veri Nedir?</h2>
+                        <p>
+                            Kişisel veri, KVKK’da kimliği belirli veya belirlenebilir gerçek kişiye ilişkin her türlü bilgi olarak tanımlanmıştır. Buna göre bizimle paylaştığınız adınız, soyadınız, T.C. kimlik numaranız, elektronik posta adresiniz ve telefon numaranız kişisel veri olarak adlandırılmaktadır.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-lg-12 col-md-12 div">
+                <div class="single-feature">
+                    <div class="col-lg-12">
+                            <h2>Kişisel verilerinizin tarafımızca toplanmasının sebebi nedir?</h2>
+                        <p>
+                            Traffic Kurye ile olan hizmet ilişkiniz dolayısıyla yasal yükümlülüklerimizi yerine getirebilmek adına gönderenin adı, soyadı, alıcının adresi gibi sevkiyatı yönetmek için topladığı veriler ve kendi çalışanlarıyla ilgili işlediği veriler bakımından veri sorumlusudur.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-lg-12 col-md-12 div">
+                <div class="single-feature">
+                    <div class="col-lg-12">
+                            <h2>Kişisel verilerinizi hangi amaçla, kimlere aktarıyoruz?</h2>
+                        <p>
+                            Kişisel verileriniz Traffic Kurye çalışanlarıyla belirli kısıtlar çerçevesinde, doğrudan/dolaylı şubelerimiz ile, iş ilişkisinin devamı esnasında birlikte bizi temsil eden ve/veya faaliyetlerimizi yürütebilmek için işbirliği yaptığımız iş ortağımız olan kurum, kuruluşlarla, verilerin bulut ortamında saklanması hizmeti aldığımız kişi ve kurumlarla paylaşılabilmektedir. Ayrıca, yasal yükümlülüklerimiz nedeniyle ve bunlarla sınırlı olmak üzere mahkemeler ve diğer kamu kurumları ile kişisel veriler paylaşılabilmektedir.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-lg-12 col-md-12 div">
+                <div class="single-feature">
+                    <div class="col-lg-12">
+                            <h2>Kişisel verilerinizi nasıl saklıyoruz?</h2>
+                        <p>
+                            Şirketimiz ile paylaşılan kişisel verileriniz Traffic Kurye’ nin yurtiçindeki güvenli sunucularında ilgili yasal düzenlemelere, KVKK hükümlerine ve Traffic Kurye standartlarına uygun olarak saklanmaktadır.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-12 col-md-12 div">
+                <div class="single-feature">
+                    <div class="col-lg-12">
+                            <h2>Kişisel verilerinizi ne kadar süre ile tutuyoruz?</h2>
+                        <p>
+                            KVKK’ya uygun olarak, KVKK md. 7/f.1.’e göre işlenmesi gerektiren amaç ortadan kalktığında ve/veya mevzuat uyarınca verilerinizi işlememiz için zorunlu kılındığımız zamanaşımı süreleri dolduğunda, kişisel verileriniz tarafımızca silinecek, yok edilecek veya anonimleştirerek kullanılmaya devam edilecektir.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-12 col-md-12 div">
+                <div class="single-feature">
+                    <div class="col-lg-12">
+                            <h2>Kişisel Verilerin Korunması Kanunu’ndan doğan haklarınız nelerdir?</h2>
+                        <p>
+                            İşlenen kişisel verilerinizle ilgili mevzuat uyarınca;
+                        </p>
+                        <ol>
+                            <li>Kişisel veri işlenip işlenmediğini öğrenme,</li>
+                            <li>Kişisel verileri işlenmişse buna ilişkin bilgi talep etme,</li>
+                            <li>Kişisel verilerin işlenme amacını ve bunların amacına uygun kullanılıp kullanılmadığını öğrenme,</li>
+                            <li>Yurt içinde kişisel verilerin aktarıldığı üçüncü kişileri bilme,</li>
+                            <li>Kişisel verilerin eksik veya yanlış işlenmiş olması hâlinde bunların düzeltilmesini isteme,</li>
+                            <li>Kişisel verilerin silinmesini veya yok edilmesini isteme,</li>
+                            <li>Kişisel verilerin eksik veya yanlış işlenmiş olması hâlinde bunların düzeltilmesine ve/veya kişisel verilerin silinmesini veya yok edilmesine ilişkin işlemlerin kişisel verilerin aktarıldığı üçüncü kişilere bildirilmesini isteme,</li>
+                            <li>İşlenen verilerin münhasıran otomatik sistemler vasıtasıyla analiz edilmesi suretiyle kişinin kendisi aleyhine bir sonucun ortaya çıkmasına itiraz etme,
+                            </li>
+                            
+                        </ol>
+
+                        <p>Kişisel verilerin kanuna aykırı olarak işlenmesi sebebiyle zarara uğraması hâlinde zararın giderilmesini talep etme haklarına sahipsiniz.</p>
+                            
+                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-12 col-md-12 div">
+                <div class="single-feature">
+                    <div class="col-lg-12">
+                            <h2>Tarafımıza bildirmiş olduğunuz kişisel verilerinize ilişkin haklarınızı ne şekilde kullanabilirsiniz?</h2>
+                        <p>
+                            Hakkınızda saklanan tüm bilgileri tarafınıza iletmemizi talep etme hakkına sahipsiniz. <b class="onemliIcerik">info@traffickurye.com</b> mail adresimizden ya da <b class="onemliIcerik">0212 217 06 26</b> iletişim numaramızdan kişisel bilgilerinizi sildirebilir, düzeltebilir veya gözden geçirebilirsiniz.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+

@@ -1,0 +1,224 @@
+﻿.baslikRenk{
+    color:#199449!important;
+}
+.multi-line{
+    width:700px;
+    height:120px!important;
+}
+.yaziRenk{
+    border-color:darkgreen;
+    color:darkseagreen;
+}
+
+.form-control{
+    /*border-color:none;*/
+}
+.input-group{
+    margin-bottom:25px;
+    /*border-color:none;*/
+}
+.control-label{
+    float:left;
+    text-align:right;
+}
+.input-group.control-label{
+    display: inline-block;
+    line-height:1;
+}
+.nav-menu a{
+    color:#199449!important;
+    font-weight:bold;
+}
+a,a:focus,a:hover{
+    text-decoration:none;
+}
+#mobile-nav-toggle{
+    background: #199449;
+}
+#mobile-nav ul li{
+    background-color:black!important;
+}
+#mobile-nav ul li a{
+    background-color:black!important;
+}
+#mobile-nav ul .menu-has-children i.fa-chevron-up {
+  color: black!important;
+}
+#mobile-nav ul .menu-item-active {
+  color: #FFFFFF;
+}
+.main-menu {
+  padding-top: 10px;
+}
+#header{
+    background:#F5F5F5;
+    opacity: 0.7;
+    padding: 0px 0px 10px 0px;
+}
+#header.header-scrolled{
+     background:#F5F5F5;
+     transition: all 0.3s;
+     opacity: 1;
+}
+.about-content a{
+    color: #8FBC8F!important;
+}
+.style-1 .banner-area {
+    background: url(../background/style1.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    /*animation:image 10s infinite alternate;
+    -webkit-animation:image 10s infinite alternate;
+    -moz-animation:image 10s infinite alternate;*/
+}
+ .style-2 .banner-area {
+    background: url(../background/style2.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+}
+.style-3 .banner-area {
+    background: url(../background/style3.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+}
+.style-4 .banner-area {
+    background: url(../background/style4.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+}
+
+/*@keyframes image{
+    0% {
+       background-image: url('../foto/2012-1-1.jpg');
+    }
+    25% {
+        background-image: url('../foto/2012-1-2.jpg');
+    }
+    50% {
+        background-image: url('../foto/2012-1-3.jpg');
+    }
+    75% {
+        background-image: url('../foto/2012-1-4.jpg');
+    }
+    100% {
+        background-image: url('../foto/2017-2-4.JPG');
+    }
+}*/
+
+b, sup, sub, u, del{
+    color:darkseagreen;
+}
+.footer-area{
+    background:none;
+    background-color:#199449!important;
+}
+.feature-area{
+    background:none;
+    /*background-color:#FFF0F5;*/
+    /*background-color:#FFFAF0;*/
+    background-color:#f9f9ff;
+}
+
+
+.dropdown-menu{
+    color:#199449!important;
+    background-color:#F5F5F5!important;
+    transition: all 0.5s;
+}
+.footer-area .footer-nav li a:hover {
+  color: #00FA9A;
+}
+
+.feature-area .single-feature:hover {
+  cursor: auto;
+}
+.products-area .single-product:hover {
+  cursor: auto;
+}
+
+.feature-area .single-feature:hover h4, .feature-area .single-feature:hover .lnr {
+  color: darkgreen;
+}
+
+ol{
+  list-style: circle;
+}
+h6{
+        font-style: italic;
+}
+
+.p1-gradient-bg, .primary-btn, .single-product:hover .details .primary-btn, .about-video-right .overlay-bg, .blog-area .detais .tags li, .footer-social a:hover {
+  background-image: -moz-linear-gradient(0deg, #46dc70 0%, #94b181 100%);
+  background-image: -webkit-linear-gradient(0deg, #46dc70 0%, #94b181 100%);
+  background-image: -ms-linear-gradient(0deg, #46dc70 0%, #94b181 100%);
+}
+
+.p1-gradient-color {
+  background: -moz-linear-gradient(0deg, #46dc70 0%, #94b181 100%);
+  background: -webkit-linear-gradient(0deg, #46dc70 0%, #94b181 100%);
+  background: -ms-linear-gradient(0deg, #46dc70 0%, #94b181 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+@media (max-width: 750px) {
+iframe {
+max-width: 100%;
+height: 680px;
+}
+}
+@media (min-width: 750px) {
+iframe {
+max-width: 100%;
+height: 660px;
+}
+}
+@media (min-width: 768px) {
+iframe {
+max-width: 100%;
+height: 640px;
+}
+}
+@media (min-width: 992px) {
+iframe {
+max-width: 100%;
+height:600px;
+}
+}
+@media (min-width: 1035px) {
+iframe {
+max-width: 100%;
+height: 580px;
+}
+}
+@media (min-width: 1040px) {
+iframe {
+max-width: 100%;
+height: 550px;
+}
+}
+
+.onemliIcerik{
+    font-size:medium;
+    color:darkgreen;
+    font-style:italic;
+}
+.buttonHizala{
+    margin-left:11px;
+    margin-right:11px;
+}
+
+
+/*body.banner{
+    background:url('../foto/banner2.jpg')!important;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}*/
+

@@ -1,0 +1,82 @@
+﻿
+@{
+    ViewBag.Title = "Hakkımızda";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+<head>
+    <link href="~/Content/css/HakkimizdaHareketliDiv.css" rel="stylesheet" />
+    <link href="~/Content/css/lightbox.min.css" rel="stylesheet" />
+</head>
+<!-- start banner Area -->
+<section class="banner-area" id="home">
+    <div class="container">
+        <div class="row d-flex align-items-center justify-content-center">
+            <div class="about-content col-lg-12">
+                <h1 class="yaziRenk">
+                    Hakkımızda
+                </h1>
+                <p class="yaziRenk link-nav">@Html.ActionLink("Anasayfa", "Index", "Home", new { veri = ViewBag.IDi}, null)<span class="lnr lnr-arrow-right"></span>@Html.ActionLink("Hakkımızda", "Hakkımızda", "Home", new { veri = ViewBag.ID}, null)</p>
+                @*<p class="text-white link-nav"><a href="Index">Anasayfa </a>  <span class="lnr lnr-arrow-right"></span>  <a href="Hakkımızda"> Hakkımızda</a></p>*@
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End banner Area -->
+<!-- Start about-video Area -->
+
+
+<!-- End about-video Area -->
+
+<!-- Start home-about Area -->
+<section class="feature-area section-gap">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 div" >
+                <div class="single-feature">                      
+                        <h4>Kuruluş</h4>
+                    <p >
+                        Traffic toplu dağıtım 1998 yılında, dağıtım sektörüne yeni bir bakış ve hizmet anlayışı getirmiştir. Temel prensibi müşteri memnuniyeti olan Traffic toplu dağıtımlarında teknoloji ve güvenli dağıtım hedefleyen pek çok kurum ve kuruluşa çözüm ortağı olmuştur. Dinamik kadrosu, güvenilir ekibi ile müşterilere kaliteli hizmet sunmaktadır.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-6 div">
+                <div class="single-feature">                       
+                        <h4>Değer</h4>
+                    <p>
+                        Traffic; Bünyesinde yer alan IT ekibi tarafından yazılmış olan, «Trafficmobile» programı; Sözleşme Toplama, E-Ticaret ürün teslimi, Insert, Adresli dağıtımlar ve denetim hizmetlerinde kullanılmaktadır. Bu program sayesinde dağıtımlar online olarak, güvenle takip edilebilmekte ve raporlanabilmektedir.
+                        
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-6 div">
+                <div class="single-feature">                     
+                        <h4>Büyüklük</h4>
+                    <p style="font-size:medium">
+                        Türkiye'nin her yerinde 1000'i aşkın çalışan dinamik kadrosu ve 300'e yakın aracı ile her türlü dağıtım hizmetini hızlı ve güvenle sağlamaktadır.
+                        <br />
+                        <br />
+                    </p>
+
+                </div>
+            </div>
+            <div class="col-lg-6 w3_agile_work_grid div" >
+                <div class="single-product">
+                    <div class="wthree_work_grid1">
+                        <a href="~/Content/img/milestone.png" class="b-link-stripe b-animate-go swipebox" rel="lightbox">
+                            <div class="agile_work_grid w3_agileits_sub_work">
+                                <img src="~/Content/img/milestone.png" alt="" class="img-responsive" style="width:200px;height:200px;" />
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+            
+        </div>
+    </div>
+</section>
+<!-- End home-about Area -->
+<!-- Start brand Area -->
+
+<!-- End brand Area -->
+<script src="~/Content/js/lightbox-plus-jquery.min.js"></script>

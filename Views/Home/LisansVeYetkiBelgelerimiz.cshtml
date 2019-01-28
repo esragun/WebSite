@@ -1,0 +1,66 @@
+﻿@model List<TrafficKurye.Models.BelgeModel>
+@{
+    ViewBag.Title = "LisansVeYetkiBelgelerimiz";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+<head>
+    <link href="~/Content/css/lightbox.min.css" rel="stylesheet" />
+</head>
+<!-- start banner Area -->
+<section class="banner-area" id="home">
+    <div class="overlay overlay-bg"></div>
+    <div class="container">
+        <div class="row d-flex align-items-center justify-content-center">
+            <div class="about-content col-lg-12">
+                <h1 class="yaziRenk">
+                    Lisans Ve Yetki Belgelerimiz
+                </h1>
+                <p class="yaziRenk link-nav">@Html.ActionLink("Anasayfa", "Index", "Home", new { veri = ViewBag.IDi }, null)<span class="lnr lnr-arrow-right"></span>@Html.ActionLink("Lisans Ve Yetki Belgelerimiz", "LisansVeYetkiBelgelerimiz", "Home", new { veri = ViewBag.ID }, null)</p>
+                @*<p class="text-white link-nav"><a href="Index">Anasayfa</a>  <span class="lnr lnr-arrow-right"></span>  <a href="LisansVeYetkiBelgelerimiz"> Lisans Ve Yetki Belgelerimiz</a></p>*@
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End banner Area -->
+<!-- Start products Area -->
+<section class="products-area product-page section-gap">
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-12 pb-40 header-text text-center">
+                <h3>Lisans ve Yetki Belgeleri</h3>
+            </div>
+        </div>
+        <div class="agileinfo_work_grids">
+            <div class="row">
+                @{
+                    foreach (var belge in Model)
+                    {
+                        <div class="col-lg-3 col-md-6 w3_agile_work_grid">
+                            <div class="single-product">
+                                <div class="wthree_work_grid1">
+                                    <a href="~/Content/LisansveYetkiBelgeleri/@belge.ImgUrl" class="b-link-stripe b-animate-go  swipebox" rel="lightbox">
+                                        <div class="agile_work_grid w3_agileits_sub_work">
+                                            <img src="~/Content/LisansveYetkiBelgeleri/@belge.ImgUrl" alt="" class="img-responsive" style="width:100px;height:150px;" />
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="details" style="height:200px;">
+                                    <h4>@belge.BelgeBaslik</h4>
+                                    <p>
+                                        @belge.Icerik
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+               
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End products Area -->
+<!-- Start brand Area -->
+<!-- End brand Area -->
+
+<script src="~/Content/js/lightbox-plus-jquery.min.js"></script>

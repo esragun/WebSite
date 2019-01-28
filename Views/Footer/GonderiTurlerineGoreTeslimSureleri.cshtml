@@ -1,0 +1,62 @@
+﻿
+@{
+    ViewBag.Title = "GonderiTurlerineGoreTeslimSureleri";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+<style>
+    h2 {
+        color: darkgreen;
+        border-bottom: 1px solid darkseagreen;
+    }
+
+    p {
+        color:#458B74;
+        margin:auto;
+        font-size:medium;
+    }
+</style>
+
+<section class="banner-area relative" id="home">
+    <div class="overlay overlay-bg"></div>
+    <div class="container">
+        <div class="row d-flex align-items-center justify-content-center ">
+            <div class="about-content col-lg-12">
+                    <h1 class="yaziRenk">
+                        Gönderi Türlerine Göre Teslim Süreleri
+                    </h1>
+                    <p class="yaziRenk link-nav text-center">@Html.ActionLink("Anasayfa", "Index", "Home", new { veri = ViewBag.IDi }, null)<span class="lnr lnr-arrow-right"></span>@Html.ActionLink("Gönderi Türlerine Göre Teslim Süreleri", "GonderiTurlerineGoreTeslimSureleri", "Footer", new { veri = ViewBag.ID }, null)</p>
+                    @*<p class="text-white link-nav"><a href="Index">Anasayfa </a>  <span class="lnr lnr-arrow-right"></span>  <a href="Hakkımızda"> Hakkımızda</a></p>*@
+               
+            </div>
+        </div>
+    </div>
+</section>
+<section class="feature-area section-gap">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 div">
+                <div class="single-feature">
+                    <div class="col-lg-12">
+                            <h2>Gönderi Türlerine Göre Teslim Süreleri</h2>
+                        <br />
+                            <p>Kayıtlı gönderilerinin taahhüt edilen süreler içerisinde teslim edilememesi ve göndericilerinin de talep etmesi halinde, kabulde alınmış olan ücretler iade edilir.</p>
+                            <p>Gönderi teslimat durumunda alıcıya ulaşılamayıp haber formu bırakıldığı adresli gönderiler teslim süresinin hesaplanmasında dikkate alınır. Bu tarihler, teslim tarihi olarak değerlendirilir. Teslim süreleri, alıcı ad ve soyad ile adresinin tam ve doğru yazılması halinde geçerlidir.</p>
+                            <p>
+                                Müşterilerle yapılacak özel sözleşmelerle farklı teslim süreleri belirlenebilir. Teslim süresiyle ilgili hak arama, ücret iadesi talep etme hakkı göndericiye aittir. Gönderici isterse bu hakkını alıcıya devredebilir.
+                            </p>
+                            <p>
+                                Ücret iadesi talebiyle ilgili başvurular, gönderinin teslim süresinin bitimini takip eden günden başlayarak 4 ay ile sınırlıdır.
+                            </p>
+                            <p>
+                                İl merkezleri teslimat süresi 5 gün
+                            </p>
+                            <p>
+                                İlçe ve köyler teslimat süresi 7 gün
+                            </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

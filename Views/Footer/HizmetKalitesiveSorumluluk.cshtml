@@ -1,0 +1,89 @@
+﻿
+@{
+    ViewBag.Title = "HizmetKalitesiveSorumluluk";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<style>
+     h2{
+        color:darkgreen;
+        border-bottom:1px solid darkseagreen;
+    }
+     p{
+        color:#458B74;
+        margin:auto;
+        font-size:medium;
+     }
+     h4{
+         color:seagreen;
+     }
+     li{
+         padding:4px;
+     }
+
+</style>
+
+<section class="banner-area relative" id="home">
+    <div class="overlay overlay-bg"></div>
+    <div class="container">
+        <div class="row d-flex align-items-center justify-content-center">
+            <div class="about-content col-lg-12">
+                <h1 class="yaziRenk">
+                    Hizmet Kalitesi ve Sorumluluklarımız
+                </h1>
+                <p class="yaziRenk link-nav text-center">@Html.ActionLink("Anasayfa", "Index", "Home", new { veri = ViewBag.IDi }, null)<span class="lnr lnr-arrow-right"></span>@Html.ActionLink("Hizmet Kalitesi ve Sorumluluklarımız", "HizmetKalitesiveSorumluluk", "Footer", new { veri = ViewBag.ID }, null)</p>
+                @*<p class="text-white link-nav"><a href="Index">Anasayfa </a>  <span class="lnr lnr-arrow-right"></span>  <a href="Hakkımızda"> Hakkımızda</a></p>*@
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="feature-area section-gap">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 div">
+                <div class="single-feature">
+                    <div class="col-lg-12">
+                            <h2>Hizmet Kalitesi ve Sorumluluklarımız</h2>
+                        <br />
+                            <p>
+                                6475 Sayılı Posta Hizmetleri Kanunu gereğince, Bilgi Teknolojileri ve İletişim Kurumunca yayımlanan, Posta Hizmetlerinin Sunulmasına İlişkin Yönetmeliğin, Hizmet kalitesi başlıklı 20 nci maddesi uyarınca yayınlanması talep edilen dokümanlar;
+                            </p>                     
+                    </div>
+                    <div class="col-lg-12">
+                        <p style="text-decoration-line:underline;">@Html.ActionLink("Sorumluluk ve Tazminat", "SorumlulukveTazminat", "Footer", new { veri = ViewBag.ID ,@class="renk" }, null)</p>
+                        <p style="text-decoration-line:underline;">@Html.ActionLink("Gönderi Türlerine Göre Teslim Süreleri", "GonderiTurlerineGoreTeslimSureleri", "Footer", new { veri = ViewBag.ID }, null)</p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-lg-12 col-md-12 div">
+                <div class="single-feature">
+                    <div class="col-lg-12">
+                            <h2>Rüşvet ve Yolsuzluk Politikası  </h2>
+                        <br />
+                            <p>
+                                TRAFFIC KURYE iş etiği konusunda gösterdiği hassasiyetinin bir göstergesi olarak Rüşvet ve Yolsuzluk Politikasını hayata geçirmiştir. Konunun iş etiği yanında yasal olarak ceza gerektiren bir fil olması sebebiyle çalışanların bu konuda hassasiyet göstermesi ve çalışma hayatından bağımsız olarak kişisel ödev ve sorumlulukların bir parçası olarak değerlendirilmesi beklenmektedir.
+                            </p>
+                            <p>
+                                TRAFFIC KURYE faaliyet gösterdiği ve temsil edildiği tüm ülkelerdeki rüşvet ve yolsuzluk kapsamındaki yasa ve düzenlemelere, evrensel hukuk kurallarına, etik ve mesleki ilkelere uyum sağlamayı ilke edinmiştir. TRAFFIC KURYE bu ilke kapsamında rüşvet ve yolsuzluğa karşı "sıfır tolerans" yaklaşımı ile hareket etmekte ve faaliyetlerini adil, dürüst, yasal ve etik kurallara uygun bir şekilde sürdürmeyi taahhüt etmektedir.
+                            </p>
+                            <p>
+                                TRAFFIC KURYE' deki etik kurallar, yönetmelikler, prosedürler ve diğer düzenlemeler, faaliyetlerin yasalara uygun, doğru, adil ve dürüst bir şekilde yürütülmesini destekler nitelikte olup, TRAFFIC KURYE' nin tüm paydaşlarının haklarının korunmasını sağlamak amacıyla rüşvet ve yolsuzluk ile mücadele konusunda çok daha hassas bir tavır sergilenmektedir. Yolsuzluk ve Rüşvet Politikası da bu konuya verilen önemin bir gereği olarak hayata geçirilmiştir.
+                            </p>
+                            <p>
+                                Rüşvet ve Yolsuzluk Politikası kapsamındaki kişilerin; TRAFFIC KURYE lehine dahi olsa yasal ve etik olmayan bir menfaat sağlamak için ödeme veya değeri olan herhangi bir şey teklif etmesi veya diğer kuruluş ve kişilerden benzeri bir menfaat elde etmesi, faaliyette bulunulan ülkede veya iş kolunda bu tür uygulamalar yaygın olsa bile rüşvet veya yolsuzluk olarak değerlendirilebilecek yasal ve etik olmayan her türlü davranışta bulunması yasaklanmaktadır.
+                            </p>
+                            <p>
+                                Rüşvet ve yolsuzluğa konu olan menfaatin maddi değeri veya karşılığında karşı taraf için herhangi bir şey yapılıp yapılmaması önemli değildir. Menfaatin değerinin çok düşük olması veya teklif yapılmasına karşın verilen taahhüdün henüz gerçekleşmemesi durumunda da Rüşvet ve Yolsuzluk Politikasına aykırı hareket edilmiş olur..
+                            </p>
+                            <p>
+                                TRAFFIC KURYE' de tedarikçiler, müşteriler, çalışanlar ve diğer paydaşların yasal hakları korunur. Muhasebe işlemleri tam, doğru ve adil bir şekilde kayıt altına alınır, kayıt dışı işlemleri engelleyecek iç kontrol sistemleri kurulur.
+                            </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,208 @@
+﻿@{
+    ViewBag.Title = "EkHizmetler";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+    <link href="~/Content/css/bootstrap.css" rel="stylesheet" />
+    <a href="~/Content/css/bootstrap.map"></a>
+    <link href="~/Content/css/font-awesome.min.css" rel="stylesheet" />
+<style>
+    h4{
+        /*color:#7CCD7C;*/
+        color:#28a745;
+        font-weight:bold;
+        font-size:large;
+        margin-left:20px;
+        margin-top:8px;
+
+    }
+    p{
+        /*color:#28a745;*/
+        /*color:#7CCD7C;*/
+        color:#458B74;
+        font-size:large;
+        margin:auto;
+        /*text-align:justify;*/
+    }
+</style>
+
+<section class="banner-area" id="home">
+    <div class="overlay overlay-bg"></div>
+    <div class="container">
+        <div class="row d-flex align-items-center justify-content-center">
+            <div class="about-content col-lg-12">
+                <h1 class="yaziRenk">
+                    Ek Hizmetler
+                </h1>
+                <p class="yaziRenk link-nav" >@Html.ActionLink("Hizmetlerimiz", "Hizmetlerimiz", "Home", new { veri = ViewBag.IDi }, null)<span class="lnr lnr-arrow-right"></span>@Html.ActionLink("Ek Hizmetler", "EkHizmetler", "Home", new { veri = ViewBag.ID}, null)</p>
+                @*<p class="text-white link-nav"><a href="Index">Anasayfa </a>  <span class="lnr lnr-arrow-right"></span>  <a href="Hizmetlerimiz"> Hizmetlerimiz</a></p>*@
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="feature-area section-gap">
+    <div class="container">
+        
+        <div class="row">
+            <div class="col-lg-6 col-md-6">
+                <div class="single-feature">
+                    <a class="title d-flex flex-row">
+                        <img style="width:30px;height:30px;" src="~/Content/hizmetlericon/s-1.png" />
+                        <h4> E-MAIL/MAILING</h4>
+                    </a>
+                        
+                    <p>
+                        Talebiniz doğrultusunda projelerinizin teslimatı aşamasındaki süreç bilgileri ve datalar, müşterilere e-mail, mailing ile bilgi olarak paylaşılabilir.
+                        <br />
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="single-feature">
+                    <a class="title d-flex flex-row">
+                        <img style="width:30px;height:30px;" src="~/Content/hizmetlericon/s-2.png" />
+                        <h4>SMS</h4>
+                    </a>
+                        <p>
+                            Projelerinizin dağıtımı sırasında, belirlemiş olduğunuz teslimat süreçleri ile ilgili müşterilere SMS gönderilerek bilgi verilir.
+                            <br />
+                        </p>
+</div>
+            </div> 
+            <div class="col-lg-6 col-md-6">
+                <div class="single-feature">
+                    <a class="title d-flex flex-row">
+                        <img style="width:28px;height:28px;" src="~/Content/hizmetlericon/s-5.png" />
+                        <h4>RANDEVU ALIMI</h4>
+                    </a>                        
+                    <p>
+                        Gönderilerinizi alıcılarına, randevulu şekilde ulaştırmak için, ses kayıtlı olarak randevu alımı ve adres teyidi yapılır. “Traffic Mobile” sistemi üzerinde tüm yapılan randevu görüşmeleri eş zamanlı olarak dinlenebilir.
+
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="single-feature">
+                    <a class="title d-flex flex-row">
+                        <img style="width:30px;height:30px;" src="~/Content/hizmetlericon/s-6.png" />
+                        <h4>IN & OUTBOUND</h4>
+                    </a>                        
+                    <p >
+                        Projelerinizde sizlere yardımcı olmak, müşterilerinize dağıtım ile ilgili destek olmak, yardım, bilgi alma, işlem yapma, vb. aşamalarında özel ekipler kurarak inbound ve outbound çağrılarınızda profesyonel hizmet verilir.
+                    </p>
+
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="single-feature">
+                    <a class="title d-flex flex-row">
+                        <img style="width:30px;height:30px;" src="~/Content/hizmetlericon/s-7.png" />
+                        <h4>ADERS GİRİŞİ</h4>
+                    </a>
+                    <p>
+                        Tarafımıza vermiş olduğunuz kartvizitler, karışık listeler, broşür vb dokümanlardaki istemiş olduğunuz bilgileri, istediğiniz formatta veri girişleri yapılarak tek bir liste halinde paylaşılır.
+                        <br />
+                        <br />
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="single-feature">
+                    <a class="title d-flex flex-row">
+                        <img style="width:30px;height:30px;" src="~/Content/hizmetlericon/s-9.png" />
+                        <h4>ADRES GÜNCELLEME</h4>
+                    </a>
+                    <p>
+                        Datalarınızın adres güncellemesi yapılarak, güncel adres datası oluşturulur. Adres güncellemede, ses kayıtlı sistem kullanılmakta olup, geliştirilmiş olan “Traffic Mobile” sistemi ile yapılan tüm görüşmeler eş zamanlı olarak dinlenebilir.
+                    </p>
+
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="single-feature">
+                    <a class="title d-flex flex-row">
+                        <img style="width:30px;height:30px;" src="~/Content/hizmetlericon/s-8.png" />
+                        <h4>ELLEÇLEME</h4>
+                    </a>
+                    <p>
+                        Gönderilerinizin Etiketleme, Poşetleme, Zarflama, Eşleme, Harmanlama, Insert ekleme vb. tüm hazırlık işlemleri maksimum hızda, güvenli bir şekilde yapılır.
+                        <br />
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="single-feature">
+                    <a class="title d-flex flex-row">
+                        <img style="width:30px;height:30px;" src="~/Content/hizmetlericon/s-4.png" />
+                        <h4>ETİKET BASMA</h4>
+                    </a>
+                    <p style="font-size:medium">
+                        Gönderilerinize özel alıcı bilgileri ve adres bilgileri içeren etiket basımı yapılır.
+                        <br />
+                        <br />
+
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="single-feature">
+                    <a class="title d-flex flex-row">
+                        <img style="width:30px;height:30px;" src="~/Content/hizmetlericon/s-12.png" />
+                        <h4>KALIGRAFI</h4>
+                    </a>
+                    <p>
+                        Gönderilerinize alıcı bilgileri kaligrafik olarak yazılır. Kaligrafik yazı; doğru boşluk bırakılarak, doğru biçimlendirme ile, yazıya simetrik görünüm kazandırarak, zarif ve kibar bir yazı stilini ortaya çıkararak ve harf orantılarını eşitleyerek hazırlanır.
+                    </p>
+
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="single-feature">
+                    <a class="title d-flex flex-row">
+                        <img style="width:30px;height:30px;" src="~/Content/hizmetlericon/s-11.png" />
+                        <h4>ADRES SAKLAMA</h4>
+                    </a>
+                    <p>
+                        Periyodik olarak dağıtımı yapılacak gönderi datanız tarafımızca saklanır. Tarafınıza verilen iade raporuna istinaden güncellenen adres bilgileri datanız içerisinden düzeltilir. Sistemimizde güncel kayıt altına alınarak dağıtım işlemi gerçekleştirilir.
+
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="single-feature">
+                    <a class="title d-flex flex-row">
+                        <img style="width:30px;height:30px;" src="~/Content/hizmetlericon/s-3.png" />
+                        <h4>TICKET SİSTEMİ</h4>
+                    </a>
+                    <p >
+                        Türkiye’de ilk defa müşteriye özel geliştirilmiş, Help Desk Hizmeti üstünlüğü(Ticket)
+
+                        Sadece Traffic Kurye tarafından geliştirilen ticket * sistemi ile, firmalardan gelen taleplere, size özel müşteri hizmetlerimizin yanıt verme süresi karşılıklı olarak online raporlanır.
+
+                        Firma ile Traffic Kurye arasındaki iletişimin, hızlı olarak sağlanması için geliştirilen sistemdir. Sistem iki taraflı çalışmakta olup, geri dönüş yapılmayan hiçbir ticket kapatılmaz. Böylece, geri dönüş sürelerinin takibi yapılır.
+                    </p>
+
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="single-feature">
+                    <a class="title d-flex flex-row">
+                        <img style="width:30px;height:30px;" src="~/Content/hizmetlericon/s-10.png" />
+                        <h4>GPS VE GEGOCODING</h4>
+                    </a>
+                    <p>
+                        Projelerinizdeki tüm teslimat aşamaları fotoğraflanır. “Traffic Mobile” sistemi ile fotoğrafların Google Haritalar üzerindeki adresleri, tarih, saat ve koordinat bilgileri eş zamanlı görülür.
+
+                        Ayrıca, adres bilgisi olan datanızın coğrafi koordinatları işaretlenerek, haritalandırılması işlemi yapılır.
+                        <br />
+                    </p>
+                </div>
+            </div>
+            
+            
+           
+            
+        </div>
+    </div>
+</section>
+

@@ -1,0 +1,39 @@
+﻿.div {
+    background-color: none;
+    font-weight: bold;
+    position: relative;
+    -webkit-animation: mymove 5s ;
+    animation: mymove 5s ;
+    
+}
+
+#div1 {-webkit-animation-timing-function: linear;}
+#div2 {-webkit-animation-timing-function: ease;}
+#div3 {-webkit-animation-timing-function: ease-in;}
+#div4 {-webkit-animation-timing-function: ease-out;}
+#div5 {-webkit-animation-timing-function: ease-in-out;}
+#div6 {-webkit-animation-timing-function: ease;}
+#div7 {-webkit-animation-timing-function: ease-in;}
+#div8 {-webkit-animation-timing-function: ease-out;}
+
+#div1 {animation-timing-function: linear;}
+#div2 {animation-timing-function: ease;}
+#div3 {animation-timing-function: ease-in;}
+#div4 {animation-timing-function: ease-out;}
+#div5 {animation-timing-function: ease-in-out;}
+#div6 {animation-timing-function: ease;}
+#div7 {animation-timing-function: ease-in;}
+#div8 {animation-timing-function: ease-out;}
+
+@-webkit-keyframes mymove {
+    from {left: -1200px;}
+    to {left: 0px;}
+}
+
+
+@keyframes mymove {
+    from {left: -1200px;}
+    to {left: 0px;}
+}
+
+

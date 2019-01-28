@@ -1,0 +1,888 @@
+﻿@model TrafficKurye.Models.Form.Kariyer
+@{
+    ViewBag.Title = "Kariyer";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<script src="~/Content/js/jquery.maskedinput.min.js"></script>
+
+<section class="banner-area" id="home">
+    <div class="overlay overlay-bg"></div>
+    <div class="container">
+        <div class="row d-flex align-items-center justify-content-center">
+            <div class="about-content col-lg-12">
+                <h1 class="yaziRenk">
+                    Kariyer
+                </h1>
+                <p class="yaziRenk link-nav">@Html.ActionLink("Anasayfa", "Index", "Home", new { veri = ViewBag.ID }, null)<span class="lnr lnr-arrow-right"></span>@Html.ActionLink("Kariyer", "Kariyer", "Home", new { veri = ViewBag.ID }, null)</p>
+                @*<p class="text-white link-nav"><a href="Index">Anasayfa </a>  <span class="lnr lnr-arrow-right"></span>  <a href="Kariyer"> Kariyer </a></p>*@
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="contact-page-area section-gap">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+
+                @using (Html.BeginForm("Kariyer", "Home", FormMethod.Post, new { @class = "form-area contact-form text-center form-control" }))
+                {
+                    if (ViewBag.sonuc == "danger" || ViewBag.sonuc == "success")
+                    {
+                        <div class="alert alert-@ViewBag.Sonuc" style="color:black;">
+                            @ViewBag.Mesaj
+                        </div>
+                    }
+
+                    <fieldset>
+                        <div class="form-group">
+                            <div class="row yaziRenk">
+                                <!-- Kimlik Bilgileri -->
+                                <div class="col-lg-12">
+                                    <h4>@Html.Label("KİMLİK BİLGİLERİNİZ", new { @class = "baslikRenk" }) </h4>
+                                    <hr />
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-4 control-label">
+                                        <h5>@Html.LabelFor(model => model.Ad, new { @class = "yaziRenk" })</h5>
+                                    </div>
+                                    <div class="input-group col-lg-8">
+                                        @Html.ValidationMessageFor(model => model.Ad, "", new { @class = "text-danger" })
+                                        @Html.TextBoxFor(model => model.Ad, new { @class = "form-control", placeholder = "İsminizi giriniz..", required = "required", type = "text", maxlength = "20" })
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-4 control-label">
+                                        <h5>@Html.LabelFor(model => model.Soyad, new { @class = "yaziRenk" })</h5>
+                                    </div>
+                                    <div class="input-group col-lg-8">
+                                        @Html.ValidationMessageFor(model => model.Soyad, "", new { @class = "text-danger" })
+                                        @Html.TextBoxFor(model => model.Soyad, new { @class = "form-control", placeholder = "Soyadınızı giriniz..", required = "required", maxlength = "20" })
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-4 control-label">
+                                        <h5>@Html.LabelFor(model => model.Email, new { @class = "yaziRenk" })</h5>
+                                    </div>
+                                    <div class="input-group col-lg-8">
+                                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                                        @Html.TextBoxFor(model => model.Email, new { @class = "form-control", @placeholder = "ornek@traffickurye.com", type = "email", required = "required", maxlength = "30" })
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-4 control-label">
+                                        <h5>@Html.LabelFor(model => model.DogumTarihi, new { @class = "yaziRenk" })</h5>
+                                    </div>
+                                    <div class="input-group col-lg-8">
+                                        @Html.ValidationMessageFor(model => model.DogumTarihi, "", new { @class = "text-danger" })
+                                        @Html.TextBoxFor(model => model.DogumTarihi, new { @class = "form-control", @type = "date", @required = "" })
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-4 control-label">
+                                        <h5>@Html.LabelFor(model => model.DogumYeri, new { @class = "yaziRenk" })</h5>
+                                    </div>
+                                    <div class="input-group col-lg-8">
+                                        @Html.ValidationMessageFor(model => model.DogumYeri, "", new { @class = "text-danger" })
+                                        @Html.TextBoxFor(model => model.DogumYeri, new { @class = "form-control", @placeholder = "Doğum yerinizi giriniz..", type = "text", required = "required", maxlength = "30" })
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-4 control-label">
+                                        <h5>@Html.LabelFor(model => model.Cinsiyet, new { @class = "yaziRenk" })</h5>
+                                    </div>
+                                    <div class="input-group col-lg-8" required="required">
+                                        <label class="col-lg-6 col-md-6 col-sm-6">
+                                            @Html.RadioButtonFor(model => model.Cinsiyet, "Kadın", new { @checked = "checked" })
+                                            @Html.LabelFor(model => model.Cinsiyet, "Kadın")
+                                        </label>
+                                        <label class="col-lg-6 col-md-6 col-sm-6">
+                                            @Html.RadioButtonFor(model => model.Cinsiyet, "Erkek", new { Checked = "checked" })
+                                            @Html.LabelFor(model => model.Cinsiyet, "Erkek")
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-4 control-label">
+                                        <h5>@Html.LabelFor(model => model.Uyruk, new { @class = "yaziRenk" })</h5>
+                                    </div>
+                                    <div class="input-group col-lg-8" required="required">
+                                        <label class="col-lg-6 col-md-6 col-sm-6">
+                                            @Html.RadioButtonFor(model => model.Uyruk, "Diğer", new { Checked = "checked" })
+                                            @Html.LabelFor(model => model.Uyruk, "Diğer")
+                                        </label>
+                                        <label class="col-lg-6 col-md-6 col-sm-6">
+                                            @Html.RadioButtonFor(model => model.Uyruk, "Türk", new { @checked = "checked" })
+                                            @Html.LabelFor(model => model.Uyruk, "Türk")
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-4 control-label">
+                                        <h5>@Html.LabelFor(model => model.MedeniHal, new { @class = "yaziRenk" })</h5>
+                                    </div>
+                                    <div class="input-group col-lg-8">
+                                        @Html.ValidationMessageFor(model => model.MedeniHal, "", new { @class = "text-danger" })
+                                        @Html.TextBoxFor(model => model.MedeniHal, new { @class = "form-control", @placeholder = "Medeni halinizi giriniz..", @required = "required", maxlength = "10" })
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-4 control-label">
+                                        <h5>@Html.LabelFor(model => model.SahipOlduguCocukSayisiVeYaslari, new { @class = "yaziRenk" })</h5>
+                                    </div>
+                                    <div class="input-group col-lg-8">
+                                        @Html.TextBoxFor(model => model.SahipOlduguCocukSayisiVeYaslari, new { @class = "form-control", @placeholder = "Çocuk sayınızı ve yaşlarını giriniz..", @type = "text", maxlength = "50" })
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-4 control-label">
+                                        <h5>@Html.LabelFor(model => model.EsininCalismaDurumu, new { @class = "yaziRenk" })</h5>
+                                    </div>
+                                    <div class="input-group col-lg-8">
+                                        <label class="col-lg-6 col-md-6 col-sm-6">
+                                            @Html.RadioButtonFor(model => model.EsininCalismaDurumu, "Çalışıyor")
+                                            @Html.LabelFor(model => model.EsininCalismaDurumu, "Çalışıyor")
+                                        </label>
+                                        <label class="col-lg-6 col-md-6 col-sm-6">
+                                            @Html.RadioButtonFor(model => model.EsininCalismaDurumu, "Çalışmıyor")
+                                            @Html.LabelFor(model => model.EsininCalismaDurumu, "Çalışmıyor")
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-4 control-label">
+                                        <h5>@Html.LabelFor(model => model.Ehliyet, new { @class = "yaziRenk" })</h5>
+                                    </div>
+                                    <div class="col-lg-8 input-group">
+                                        @Html.ValidationMessageFor(model => model.Ehliyet, "", new { @class = "text-danger" })
+                                        @Html.TextBoxFor(model => model.Ehliyet, new { @class = "form-control", @placeholder = "Ehliyetiniz var ise sınıfını yazınız..", @required = "required", @type = "text" })
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-4 control-label">
+                                        <h5>@Html.LabelFor(model => model.AskerlikDurumu, new { @class = "yaziRenk" })</h5>
+                                    </div>
+                                    <div class="col-lg-8 input-group">
+                                        @Html.TextBoxFor(model => model.AskerlikDurumu, new { @class = "form-control", @placeholder = "Askerlik durumunuzu belirtiniz..", @type = "text", maxlength = "50" })
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-4 control-label">
+                                        <h5>@Html.LabelFor(model => model.SosyalSigortaNo, new { @class = "yaziRenk" })</h5>
+                                    </div>
+                                    <div class="col-lg-8 input-group">
+                                        @Html.TextBoxFor(model => model.SosyalSigortaNo, new { @class = "form-control", @placeholder = "Sosyal sigorta numaranızı giriniz..", maxlength = "30" })
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-4 control-label">
+                                        <h5>@Html.LabelFor(model => model.VergiNo, new { @class = "yaziRenk" })</h5>
+                                    </div>
+                                    <div class="col-lg-8 input-group">
+                                        @Html.TextBoxFor(model => model.VergiNo, new { @class = "form-control", @placeholder = "Vergi numaranızı giriniz..", @id = "txtVergiNo", maxlength = "10" })
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-4 control-label">
+                                        <h5>@Html.LabelFor(model => model.TcKimlikNo, new { @class = "yaziRenk" })</h5>
+                                    </div>
+                                    <div class="col-lg-8 input-group">
+                                        @Html.ValidationMessageFor(model => model.TcKimlikNo, "", new { @class = "text-danger" })
+                                        @Html.TextBoxFor(model => model.TcKimlikNo, new { @class = "form-control", @placeholder = "Tc Kimlik numaranızı giriniz..", @required = "required", @id = "txtTC", maxlength = "11" })
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-4 control-label">
+                                        <h5>@Html.LabelFor(model => model.Meslek, new { @class = "yaziRenk" })</h5>
+                                    </div>
+                                    <div class="col-lg-8 input-group">
+                                        @Html.ValidationMessageFor(model => model.Meslek, "", new { @class = "text-danger" })
+                                        @Html.TextBoxFor(model => model.Meslek, new { @class = "form-control", @placeholder = "Mesleğinizi giriniz..", @required = "required", @type = "text" })
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-4 control-label">
+                                        <h5>@Html.LabelFor(model => model.Adres, new { @class = "yaziRenk" })</h5>
+                                    </div>
+                                    <div class="col-lg-8 input-group">
+                                        @Html.ValidationMessageFor(model => model.Adres, "", new { @class = "text-danger" })
+                                        @Html.TextBoxFor(model => model.Adres, new { @class = "form-control", @placeholder = "Adres bilginizi giriniz..", @required = "required", @type = "text" })
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-4 control-label">
+                                        <h5>@Html.LabelFor(model => model.TelNo, new { @class = "yaziRenk" })</h5>
+                                    </div>
+                                    <div class="col-lg-8 input-group">
+                                        @Html.ValidationMessageFor(model => model.TelNo, "", new { @class = "text-danger" })
+                                        @Html.TextBoxFor(model => model.TelNo, new { @class = "form-control", @placeholder = "ör:5554443322", @required = "required", @id = "txtTel" })
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-4 control-label">
+                                        <h5>@Html.LabelFor(model => model.SabıkaKaydıVarMi, new { @class = "yaziRenk" })</h5>
+                                    </div>
+                                    <div class="input-group col-lg-8" required="required">
+                                        <label class="col-lg-6 col-md-6 col-sm-6">
+                                            @Html.RadioButtonFor(model => model.SabıkaKaydıVarMi, "Yok")
+                                            @Html.LabelFor(model => model.SabıkaKaydıVarMi, "Yok")
+                                        </label>
+                                        <label class="col-lg-6 col-md-6 col-sm-6">
+                                            @Html.RadioButtonFor(model => model.SabıkaKaydıVarMi, "Var")
+                                            @Html.LabelFor(model => model.SabıkaKaydıVarMi, "Var")
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-4 control-label">
+                                        <h5>@Html.LabelFor(model => model.SeyehatEngeliVarMi, new { @class = "yaziRenk" })</h5>
+                                    </div>
+                                    <div class="input-group col-lg-8" required="required">
+                                        <label class="col-lg-6 col-md-6 col-sm-6">
+                                            @Html.RadioButtonFor(model => model.SeyehatEngeliVarMi, "Yok")
+                                            @Html.LabelFor(model => model.SeyehatEngeliVarMi, "Yok")
+                                        </label>
+                                        <label class="col-lg-6 col-md-6 col-sm-6">
+                                            @Html.RadioButtonFor(model => model.SeyehatEngeliVarMi, "Var")
+                                            @Html.LabelFor(model => model.SeyehatEngeliVarMi, "Var")
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <!-- Öğrenim Durumunuz -->
+                                <div class="col-lg-12">
+                                    <h4>@Html.Label("ÖĞRENİM DURUMUNUZ", new { @class = "baslikRenk" }) </h4>
+                                    <hr />
+                                </div>
+                                <br />
+                                <!-- Lise Bilgileri -->
+                                <div class="col-lg-12">
+                                    <h5>@Html.Label("Lise Bilgileri", new { @class = "baslikRenk" }) </h5>
+                                    <hr />
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-4 control-label">
+                                        <h5>@Html.LabelFor(model => model.LiseOkulAdi, new { @class = "yaziRenk" })</h5>
+                                    </div>
+                                    <div class="col-lg-8 input-group">
+                                        @Html.TextBoxFor(model => model.LiseOkulAdi, new { @class = "form-control", @placeholder = "Lisenizin adı..", @type = "text" })
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-4 control-label">
+                                        <h5>@Html.LabelFor(model => model.LiseBolumAdi, new { @class = "yaziRenk" })</h5>
+                                    </div>
+                                    <div class="col-lg-8 input-group">
+                                        @Html.TextBoxFor(model => model.LiseBolumAdi, new { @class = "form-control", @placeholder = "Lisedeki bölümünüzün adını giriniz..", @type = "text" })
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-4 control-label">
+                                        <h5>@Html.LabelFor(model => model.LiseEgitimSuresi, new { @class = "yaziRenk" })</h5>
+                                    </div>
+                                    <div class="col-lg-8 input-group">
+                                        @Html.TextBoxFor(model => model.LiseEgitimSuresi, new { @class = "form-control", @placeholder = "Lisedeki eğitim sürenizi giriniz..", @type = "number" })
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-4 control-label">
+                                        <h5>@Html.LabelFor(model => model.LiseMezuniyetTarihi, new { @class = "yaziRenk" })</h5>
+                                    </div>
+                                    <div class="col-lg-8 input-group">
+                                        @Html.TextBoxFor(model => model.LiseMezuniyetTarihi, new { @class = "form-control", @placeholder = "Lise Mezuniyet Tarihinizi giriniz..", @type = "date" })
+                                    </div>
+                                </div>
+                                <!-- Lisans bilgileri -->
+                                <div class="col-lg-12">
+                                    <h5>@Html.Label("Lisans Bilgileri", new { @class = "baslikRenk" }) </h5>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-12">
+                                    <div class="col-lg-4 control-label">
+                                        <h5>@Html.LabelFor(model => model.LisansOkulAdi, new { @class = "yaziRenk" })</h5>
+                                    </div>
+                                    <div class="col-lg-8 input-group">
+                                        @Html.TextBoxFor(model => model.LisansOkulAdi, new { @class = "form-control", @placeholder = "Lisans okul adınızı yazınız..", @type = "text" })
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-4 control-label">
+                                        <h5>@Html.LabelFor(model => model.LisansBolumAdi, new { @class = "yaziRenk" })</h5>
+                                    </div>
+                                    <div class="col-lg-8 input-group">
+                                        @Html.TextBoxFor(model => model.LisansBolumAdi, new { @class = "form-control", @placeholder = "Lisans bölüm adınızı yazınız..", @type = "text" })
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-4 control-label">
+                                        <h5>@Html.LabelFor(model => model.LisansEgitimSuresi, new { @class = "yaziRenk" })</h5>
+                                    </div>
+                                    <div class="col-lg-8 input-group">
+                                        @Html.TextBoxFor(model => model.LisansEgitimSuresi, new { @class = "form-control", @placeholder = "Lisans eğitim sürenizi yazınız..", @type = "number" })
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-4 control-label" style="float:left">
+                                        <h5>@Html.LabelFor(model => model.LisansMezuniyetTarihi, new { @class = "yaziRenk" })</h5>
+                                    </div>
+                                    <div class="col-lg-8 input-group">
+                                        @Html.TextBoxFor(model => model.LisansMezuniyetTarihi, new { @class = "form-control", @placeholder = "Lisans Mezuniyet Tarihinizi yazınız..", @type = "date" })
+                                    </div>
+                                </div>
+                                <!-- Yüksek Lisans Bilgileri -->
+                                <div class="col-lg-12">
+                                    <h5>@Html.Label("Yüksek Lisans Bilgileri", new { @class = "baslikRenk" }) </h5>
+                                    <hr />
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-4 control-label">
+                                        <h5>@Html.LabelFor(model => model.YuksekLisansOkulAdi, new { @class = "yaziRenk" })</h5>
+                                    </div>
+                                    <div class="col-lg-8 input-group">
+                                        @Html.TextBoxFor(model => model.YuksekLisansOkulAdi, new { @class = "form-control", @placeholder = "Yüksek lisans okul adınızı yazınız..", @type = "text" })
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-4 control-label">
+                                        <h5>@Html.LabelFor(model => model.YuksekLisansBolumAdı, new { @class = "yaziRenk" })</h5>
+                                    </div>
+                                    <div class="col-lg-8 input-group">
+                                        @Html.TextBoxFor(model => model.YuksekLisansBolumAdı, new { @class = "form-control", @placeholder = "Yüksek lisans bölüm adınızı yazınız..", @type = "text" })
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-4 control-label">
+                                        <h5>@Html.LabelFor(model => model.YuksekLisansEgitimSuresi, new { @class = "yaziRenk" })</h5>
+                                    </div>
+                                    <div class="col-lg-8 input-group">
+                                        @Html.TextBoxFor(model => model.YuksekLisansEgitimSuresi, new { @class = "form-control", @placeholder = "Yüksek lisans eğitim sürenizi yazınız..", @type = "text" })
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-4 control-label">
+                                        <h5>@Html.LabelFor(model => model.YuksekLisansMezuniyetTarihi, new { @class = "yaziRenk" })</h5>
+                                    </div>
+                                    <div class="col-lg-8 input-group">
+                                        @Html.TextBoxFor(model => model.YuksekLisansMezuniyetTarihi, new { @class = "form-control", @type = "date" })
+                                    </div>
+                                </div>
+                                <!-- Diğer Okul -->
+                                <div class="col-lg-12">
+                                    <h5>@Html.Label("Diğer Okul", new { @class = "baslikRenk" }) </h5>
+                                    <hr />
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-4 control-label">
+                                        <h5>@Html.LabelFor(model => model.OkudugunuzIkinciOkulAdi, new { @class = "yaziRenk" })</h5>
+                                    </div>
+                                    <div class="col-lg-8 input-group">
+                                        @Html.TextBoxFor(model => model.OkudugunuzIkinciOkulAdi, new { @class = "form-control", @placeholder = "Diğer okumuş olduğunuz okul adınızı yazınız..", @type = "text" })
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-4 control-label">
+                                        <h5>@Html.LabelFor(model => model.OkudugunuzIkinciOkulBolum, new { @class = "yaziRenk" })</h5>
+                                    </div>
+                                    <div class="col-lg-8 input-group">
+                                        @Html.TextBoxFor(model => model.OkudugunuzIkinciOkulBolum, new { @class = "form-control", @placeholder = "Diğer okumuş olduğunuz bölüm adınızı yazınız..", @type = "text" })
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-4 control-label">
+                                        <h5>@Html.LabelFor(model => model.OkudugunuzIkinciOkulSuresi, new { @class = "yaziRenk" })</h5>
+                                    </div>
+                                    <div class="col-lg-8 input-group">
+                                        @Html.TextBoxFor(model => model.OkudugunuzIkinciOkulSuresi, new { @class = "form-control", @placeholder = "Diğer okumuş olduğunuz bölüm süresini yazınız..", @type = "number" })
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-4 control-label">
+                                        <h5>@Html.LabelFor(model => model.OkudugunuzIkinciOkulMezuniyet, new { @class = "yaziRenk" })</h5>
+                                    </div>
+                                    <div class="col-lg-8 input-group">
+                                        @Html.TextBoxFor(model => model.OkudugunuzIkinciOkulMezuniyet, new { @class = "form-control", @type = "date" })
+                                    </div>
+                                </div>
+                                <br />
+                                <!--Çalıştığınız yerler-->
+                                <!--En son çalıştığınız yer-->
+                                <div class="col-lg-12">
+                                    <h4>@Html.Label("ÇALIŞTIĞINIZ YERLER", new { @class = "baslikRenk" }) </h4>
+                                    <hr />
+                                </div>
+                                <hr />
+                                <br />
+                                <div class="col-lg-12">
+                                    <h5>@Html.Label("En Son Çalıştığınız Yer", new { @class = "baslikRenk"}) </h5>
+                                    <hr />
+                                </div>
+                                <br />
+                                <div class="col-lg-12">
+                                    <div class="col-lg-4 control-label">
+                                        <h5>@Html.LabelFor(model => model.EnSonCalistigiKurumAdı, new { @class = "yaziRenk" })</h5>
+                                    </div>
+                                    <div class="col-lg-8 input-group">
+                                        @Html.TextBoxFor(model => model.EnSonCalistigiKurumAdı, new { @class = "form-control", @placeholder = "Kurum adınızı yazınız..", @type = "text" })
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-4 control-label">
+                                        <h5>@Html.LabelFor(model => model.EnSonCalistigiKurumdaYaptigiIs, new { @class = "yaziRenk" })</h5>
+                                    </div>
+                                    <div class="col-lg-8 input-group">
+                                        @Html.TextBoxFor(model => model.EnSonCalistigiKurumdaYaptigiIs, new { @class = "form-control", @placeholder = "Yapmış olduğunuz işi  yazınız..", @type = "text" })
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-4 control-label">
+                                        <h5>@Html.LabelFor(model => model.EnSonKurumdakiCalismaSureniz, new { @class = "yaziRenk" })</h5>
+                                    </div>
+                                    <div class="col-lg-8 input-group">
+                                        @Html.TextBoxFor(model => model.EnSonKurumdakiCalismaSureniz, new { @class = "form-control", @placeholder = "Çalışma sürenizi  yazınız..", @type = "number" })
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-4 control-label">
+                                        <h5>@Html.LabelFor(model => model.EnSonCalistigiKurumdanAldıgıNetUcret, new { @class = "yaziRenk" })</h5>
+                                    </div>
+                                    <div class="col-lg-8 input-group">
+                                        @Html.TextBoxFor(model => model.EnSonCalistigiKurumdanAldıgıNetUcret, new { @class = "form-control", @placeholder = "Almış olduğunuz ücreti yazınız.." })
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-4 control-label">
+                                        <h5>@Html.LabelFor(model => model.EnSonkiİşindenAyrilmaNedeni, new { @class = "yaziRenk" })</h5>
+                                    </div>
+                                    <div class="col-lg-8 input-group">
+                                        @Html.EditorFor(model => model.EnSonkiİşindenAyrilmaNedeni, new { @class = "form-control" })
+                                    </div>
+                                </div>
+                                <!-- Önceki iş 1 -->
+                                <div class="col-lg-12">
+                                    <h5>@Html.Label("Ondan bir önceki çalıştığınız yer (varsa)", new { @class = "baslikRenk" }) </h5>
+                                    <hr />
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-4 control-label">
+                                        <h5>@Html.LabelFor(model => model.BirOncekiEskiIs, new { @class = "yaziRenk" })</h5>
+                                    </div>
+                                    <div class="col-lg-8 input-group">
+                                        @Html.TextBoxFor(model => model.BirOncekiEskiIs, new { @class = "form-control", @placeholder = "Daha önceki çalıştığınız kurum adını yazınız..", @type = "text" })
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-4 control-label">
+                                        <h5>@Html.LabelFor(model => model.BirOncekiEskiYapilanIs, new { @class = "yaziRenk" })</h5>
+                                    </div>
+                                    <div class="col-lg-8 input-group">
+                                        @Html.TextBoxFor(model => model.BirOncekiEskiYapilanIs, new { @class = "form-control", @placeholder = "Daha önceki çalıştığınız kurumda yaptığınız işi yazınız..", @type = "text" })
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-4 control-label">
+                                        <h5>@Html.LabelFor(model => model.BirOncekiEskiYapilanIsSuresi, new { @class = "yaziRenk" })</h5>
+                                    </div>
+                                    <div class="col-lg-8 input-group">
+                                        @Html.TextBoxFor(model => model.BirOncekiEskiYapilanIsSuresi, new { @class = "form-control", @placeholder = "Daha önceki çalıştığınız kurumdaki çalışma sürenizi yazınız..", @type = "number" })
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-4 control-label">
+                                        <h5>@Html.LabelFor(model => model.BirOncekiEskiKurumUcreti, new { @class = "yaziRenk" })</h5>
+                                    </div>
+                                    <div class="col-lg-8 input-group">
+                                        @Html.TextBoxFor(model => model.BirOncekiEskiKurumUcreti, new { @class = "form-control", @placeholder = "Daha önceki çalıştığınız kurumdan aldığınız ücret yazınız..", @type = "text" })
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-4 control-label">
+                                        <h5>@Html.LabelFor(model => model.BirOncekiEskiIsAyrilmaNedeni, new { @class = "yaziRenk" })</h5>
+                                    </div>
+                                    <div class="col-lg-8 input-group">
+                                        @Html.EditorFor(model => model.BirOncekiEskiIsAyrilmaNedeni, new { @class = "form-control" })
+                                    </div>
+                                </div>
+                                <!-- Önceki iş 2 -->
+                                <div class="col-lg-12">
+                                    <h5>@Html.Label("Ondan bir önceki çalıştığınız yer (varsa)", new { @class = "baslikRenk" }) </h5>
+                                    <hr />
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-4 control-label">
+                                        <h5>@Html.LabelFor(model => model.EskiIs1, new { @class = "yaziRenk" })</h5>
+                                    </div>
+                                    <div class="col-lg-8 input-group">
+                                        @Html.TextBoxFor(model => model.EskiIs1, new { @class = "form-control", @placeholder = "Daha önceki çalıştığınız kurum adını yazınız..", @type = "text" })
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-4 control-label">
+                                        <h5>@Html.LabelFor(model => model.EskiYapilanIs_1, new { @class = "yaziRenk" })</h5>
+                                    </div>
+                                    <div class="col-lg-8 input-group">
+                                        @Html.TextBoxFor(model => model.EskiYapilanIs_1, new { @class = "form-control", @placeholder = "Daha önceki çalıştığınız kurumda yaptığınız işi yazınız..", @type = "text" })
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-4 control-label">
+                                        <h5>@Html.LabelFor(model => model.EskiYapilanIsSuresi_1, new { @class = "yaziRenk" })</h5>
+                                    </div>
+                                    <div class="col-lg-8 input-group">
+                                        @Html.TextBoxFor(model => model.EskiYapilanIsSuresi_1, new { @class = "form-control", @placeholder = "Daha önceki çalıştığınız kurumdaki çalışma sürenizi yazınız..", @type = "number" })
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-4 control-label">
+                                        <h5>@Html.LabelFor(model => model.EskiKurumUcreti_1, new { @class = "yaziRenk" })</h5>
+                                    </div>
+                                    <div class="col-lg-8 input-group">
+                                        @Html.TextBoxFor(model => model.EskiKurumUcreti_1, new { @class = "form-control", @placeholder = "Daha önceki çalıştığınız kurumdan aldığınız ücret yazınız.." })
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-4 control-label">
+                                        <h5>@Html.LabelFor(model => model.EskiIsAyrilmaNedeni_1, new { @class = "yaziRenk" })</h5>
+                                    </div>
+                                    <div class="col-lg-8 input-group">
+                                       @Html.EditorFor(model => model.EskiIsAyrilmaNedeni_1, new { @class = "form-control" })
+                                    </div>
+                                </div>
+                                <!-- Önceki iş 3 -->
+                                <div class="col-lg-12">
+                                    <h5>@Html.Label("Ondan bir önceki çalıştığınız yer (varsa)", new { @class = "baslikRenk" }) </h5>
+                                    <hr />
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-4 control-label">
+                                        <h5>@Html.LabelFor(model => model.EskiIs_2, new { @class = "yaziRenk" })</h5>
+                                    </div>
+                                    <div class="col-lg-8 input-group">
+                                        @Html.TextBoxFor(model => model.EskiIs_2, new { @class = "form-control", @placeholder = "Daha önceki çalıştığınız kurum adını yazınız..", @type = "text" })
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-4 control-label">
+                                        <h5>@Html.LabelFor(model => model.EskiYapilanIs_2, new { @class = "yaziRenk" })</h5>
+                                    </div>
+                                    <div class="col-lg-8 input-group">
+                                        @Html.TextBoxFor(model => model.EskiYapilanIs_2, new { @class = "form-control", @placeholder = "Daha önceki çalıştığınız kurumda yaptığınız işi yazınız..", @type = "text" })
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-4 control-label">
+                                        <h5>@Html.LabelFor(model => model.EskiYapilanIsSuresi_2, new { @class = "yaziRenk" })</h5>
+                                    </div>
+                                    <div class="col-lg-8 input-group">
+                                        @Html.TextBoxFor(model => model.EskiYapilanIsSuresi_2, new { @class = "form-control", @placeholder = "Daha önceki çalıştığınız kurumdaki çalışma sürenizi yazınız..", @type = "number" })
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-4 control-label">
+                                        <h5>@Html.LabelFor(model => model.EskiKurumUcreti_2, new { @class = "yaziRenk" })</h5>
+                                    </div>
+                                    <div class="col-lg-8 input-group">
+                                        @Html.TextBoxFor(model => model.EskiKurumUcreti_2, new { @class = "form-control", @placeholder = "Daha önceki çalıştığınız kurumdan aldığınız ücret yazınız.." })
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-4 control-label">
+                                        <h5>@Html.LabelFor(model => model.EskiIsAyrilmaNedeni_2, new { @class = "yaziRenk" })</h5>
+                                    </div>
+                                    <div class="col-lg-8 input-group">
+                                        @Html.EditorFor(model => model.EskiIsAyrilmaNedeni_2, new { @class = "form-control" })
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-4 control-label">
+                                        <h5>@Html.LabelFor(model => model.IsYeriSorusturmaOnayı, new { @class = "yaziRenk" })</h5>
+                                    </div>
+                                    <div class="input-group col-lg-8" required="required">
+                                        <label class="col-lg-6 col-md-6 col-sm-6">
+                                            @Html.RadioButtonFor(model => model.IsYeriSorusturmaOnayı, "Var", new { Checked = "checked" })
+                                            @Html.LabelFor(model => model.IsYeriSorusturmaOnayı, "Var")
+                                        </label>
+                                        <label class="col-lg-6 col-md-6 col-sm-6">
+                                            @Html.RadioButtonFor(model => model.IsYeriSorusturmaOnayı, "Yok", new { @checked = "checked" })
+                                            @Html.LabelFor(model => model.IsYeriSorusturmaOnayı, "Yok")
+                                        </label>
+                                    </div>
+                                </div>
+                                <br />
+                                <!-- Referanslar-->
+                                <div class="col-lg-12">
+                                    <h4>@Html.Label("REFERANSLAR", new { @class = "baslikRenk" }) </h4>                                    
+                                </div>
+                                <br />
+                                <hr />
+                                <div class="col-lg-12">
+                                    <h6>@Html.Label("Sizin hakkınızda bilgi alabileceğimiz kişiler (akraba hariç)", new { @class = "baslikRenk" }) </h6>
+                                    <hr />
+                                </div>
+                                <!-- Referans 1-->
+                                <div class="col-lg-12">
+                                    <h5>@Html.Label("Birinci Kişi", new { @class = "baslikRenk" }) </h5>
+                                    <hr />
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-4 control-label">
+                                        <h5>@Html.LabelFor(model => model.ReferansAdsoyad_1, new { @class = "yaziRenk" })</h5>
+                                    </div>
+                                    <div class="col-lg-8 input-group">
+                                        @Html.TextBoxFor(model => model.ReferansAdsoyad_1, new { @class = "form-control", @placeholder = "Referansınızın adını ve soyadını giriniz.." })
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-4 control-label">
+                                        <h5>@Html.LabelFor(model => model.ReferansIsyeriVeGorevi_1, new { @class = "yaziRenk" })</h5>
+                                    </div>
+                                    <div class="col-lg-8 input-group">
+                                        @Html.TextBoxFor(model => model.ReferansIsyeriVeGorevi_1, new { @class = "form-control", @placeholder = "Referansınızın iş yerini ve görevini giriniz.." })
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-4 control-label">
+                                        <h5>@Html.LabelFor(model => model.ReferansAdresi_1, new { @class = "yaziRenk" })</h5>
+                                    </div>
+                                    <div class="col-lg-8 input-group">
+                                        @Html.TextBoxFor(model => model.ReferansAdresi_1, new { @class = "form-control", @placeholder = "Referansınızın adresini giriniz.." })
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-4 control-label">
+                                        <h5>@Html.LabelFor(model => model.ReferansTelNo_1, new { @class = "yaziRenk" })</h5>
+                                    </div>
+                                    <div class="col-lg-8 input-group">
+                                        @Html.ValidationMessageFor(model => model.ReferansTelNo_1, "", new { @class = "text-danger" })
+                                        @Html.TextBoxFor(model => model.ReferansTelNo_1, new { @class = "form-control", @placeholder = "ör:5554443322", id = "txtTel" })
+                                    </div>
+                                </div>
+
+                                <!-- Referans 2 -->
+                                <div class="col-lg-12">
+                                    <h5>@Html.Label("İkinci Kişi", new { @class = "baslikRenk" }) </h5>
+                                    <hr />
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-4 control-label">
+                                        <h5>@Html.LabelFor(model => model.ReferansAdsoyad_2, new { @class = "yaziRenk" })</h5>
+                                    </div>
+                                    <div class="col-lg-8 input-group">
+                                        @Html.TextBoxFor(model => model.ReferansAdsoyad_2, new { @class = "form-control", @placeholder = "Referansınızın adını ve soyadını giriniz.." })
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-4 control-label">
+                                        <h5>@Html.LabelFor(model => model.ReferansIsyeriVeGorevi_2, new { @class = "yaziRenk" })</h5>
+                                    </div>
+                                    <div class="col-lg-8 input-group">
+                                        @Html.TextBoxFor(model => model.ReferansIsyeriVeGorevi_2, new { @class = "form-control", @placeholder = "Referansınızın iş yerini ve görevini giriniz.." })
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-4 control-label">
+                                        <h5>@Html.LabelFor(model => model.ReferansAdresi_2, new { @class = "yaziRenk" })</h5>
+                                    </div>
+                                    <div class="col-lg-8 input-group">
+                                        @Html.TextBoxFor(model => model.ReferansAdresi_2, new { @class = "common-input mb-20 form-control", @placeholder = "Referansınızın adresini giriniz.." })
+                                    </div>
+                                </div>
+                                <div class="col-lg-12" style="margin-bottom:25px;">
+                                    <div class="col-lg-4 control-label" style="float:left">
+                                        <h5>@Html.LabelFor(model => model.ReferansTelNo_2, new { style = "color:darkseagreen;" })</h5>
+                                    </div>
+                                    <div class="col-lg-8 input-group">
+                                        @Html.ValidationMessageFor(model => model.ReferansTelNo_2, "", new { @class = "text-danger" })
+                                        @Html.TextBoxFor(model => model.ReferansTelNo_2, new { @class = "form-control", @placeholder = "ör:5554443322", id = "txtTel" })
+                                    </div>
+                                </div>
+
+                                <!-- Referans 3 -->
+                                <div class="col-lg-12">
+                                    <h5>@Html.Label("Üçüncü Kişi", new { @class = "baslikRenk" }) </h5>
+                                    <hr />
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-4 control-label">
+                                        <h5>@Html.LabelFor(model => model.ReferansAdsoyad_3, new { @class = "yaziRenk" })</h5>
+                                    </div>
+                                    <div class="col-lg-8 input-group">
+                                        @Html.TextBoxFor(model => model.ReferansAdsoyad_3, new { @class = "form-control", @placeholder = "Referansınızın adını ve soyadını giriniz.." })
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-4 control-label">
+                                        <h5>@Html.LabelFor(model => model.ReferansIsyeriVeGorevi_3, new { @class = "yaziRenk" })</h5>
+                                    </div>
+                                    <div class="col-lg-8 input-group">
+                                        @Html.TextBoxFor(model => model.ReferansIsyeriVeGorevi_3, new { @class = "form-control", @placeholder = "Referansınızın iş yerini ve görevini giriniz.." })
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-4 control-label">
+                                        <h5>@Html.LabelFor(model => model.ReferansAdresi_3, new { @class = "yaziRenk" })</h5>
+                                    </div>
+                                    <div class="col-lg-8 input-group">
+                                        @Html.TextBoxFor(model => model.ReferansAdresi_3, new { @class = "form-control", @placeholder = "Referansınızın adresini giriniz.." })
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-4 control-label">
+                                        <h5>@Html.LabelFor(model => model.ReferansTelNo_3, new { @class = "yaziRenk" })</h5>
+                                    </div>
+                                    <div class="col-lg-8 input-group">
+                                        @Html.ValidationMessageFor(model => model.ReferansTelNo_3, "", new { @class = "text-danger" })
+                                        @Html.TextBoxFor(model => model.ReferansTelNo_3, new { @class = "form-control", @placeholder = "Referansınızın telefon numaranızı giriniz..", id = "txtTel" })
+                                    </div>
+                                </div>
+
+                                <br />
+                                <div class="col-lg-12">
+                                    <h4>@Html.Label("DİĞER BİLGİLER", new { @class = "baslikRenk" }) </h4>
+                                    <hr />
+                                </div>
+                                <br />
+                                <!-- Staj -->
+                                <div class="col-lg-12">
+                                    <div class="col-lg-4 control-label">
+                                        <h5>@Html.LabelFor(model => model.YapilanStajlar, new { @class = "yaziRenk" })</h5>
+                                    </div>
+                                    <div class="col-lg-8 input-group">
+                                        @Html.EditorFor(model => model.YapilanStajlar, new { @class = "form-control" })
+                                    </div>
+                                </div>
+
+                                <!-- Sigara -->
+                                <div class="col-lg-12">
+                                    <div class="col-lg-4 control-label">
+                                        <h5>@Html.LabelFor(model => model.SigaraKullanıyorMu, new { @class = "yaziRenk" })</h5>
+                                    </div>
+                                    <div class="input-group col-lg-8" required="required">
+                                        <label class="col-lg-6 col-md-6 col-sm-6">
+                                            @Html.RadioButtonFor(model => model.SigaraKullanıyorMu, "Kullanıyorum", new { Checked = "checked" })
+                                            @Html.LabelFor(model => model.SigaraKullanıyorMu, "Kullanıyorum")
+                                        </label>
+                                        <label class="col-lg-6 col-md-6 col-sm-6">
+                                            @Html.RadioButtonFor(model => model.SigaraKullanıyorMu, "Kullanmıyorum", new { @checked = "checked" })
+                                            @Html.LabelFor(model => model.SigaraKullanıyorMu, "Kullanmıyorum")
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <!-- yabancı dil kurs-->
+                                <div class="col-lg-12">
+                                    <div class="col-lg-4 control-label">
+                                        <h5>@Html.LabelFor(model => model.YabanciDiller, new { @class = "yaziRenk" })</h5>
+                                    </div>
+                                    <div class="input-group col-lg-8">
+                                       @Html.EditorFor(model => model.YabanciDiller, new { @class = "form-control" })
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-4 control-label">
+                                        <h5>@Html.LabelFor(model => model.Kurslar, new { @class = "yaziRenk" })</h5>
+                                    </div>
+                                    <div class="input-group col-lg-8">
+                                        @Html.EditorFor(model => model.Kurslar, new { @class = "form-control" })
+                                    </div>
+                                </div>
+
+                                <!-- Makinaları -->
+                                <div class="col-lg-12">
+                                    <div class="col-lg-4 control-label">
+                                        <h5>@Html.LabelFor(model => model.KullandıgıIsmakinalari, new { @class = "yaziRenk" })</h5>
+                                    </div>
+                                    <div class="input-group col-lg-8">
+                                        @Html.EditorFor(model => model.KullandıgıIsmakinalari, new { @class = "form-control" })
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-4 control-label">
+                                        <h5>@Html.LabelFor(model => model.KullandıgıOfisMakinalari, new { @class = "yaziRenk" })</h5>
+                                    </div>
+                                    <div class="input-group col-lg-8">
+                                        @Html.EditorFor(model => model.KullandıgıOfisMakinalari, new { @class = "form-control" })
+                                    </div>
+                                </div>
+
+                                <!-- En son ek bilgiler -->
+                                <div class="col-lg-12">
+                                    <div class="col-lg-4 control-label">
+                                        <h5>@Html.LabelFor(model => model.OzelBilgiVeBeceriler, new { @class = "yaziRenk" })</h5>
+                                    </div>
+                                    <div class="input-group col-lg-8">
+                                        @Html.EditorFor(model => model.OzelBilgiVeBeceriler, new { @class = "form-control" })
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-4 control-label">
+                                        <h5>@Html.LabelFor(model => model.IstedigiGorev, new { @class = "yaziRenk" })</h5>
+                                    </div>
+                                    <div class="input-group col-lg-8">
+                                        @Html.EditorFor(model => model.IstedigiGorev, new { @class = "form-control" })
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-4 control-label">
+                                        <h5>@Html.LabelFor(model => model.YapilabilecekDigerGorevler, new { @class = "yaziRenk" })</h5>
+                                    </div>
+                                    <div class="input-group col-lg-8">
+                                        @Html.EditorFor(model => model.YapilabilecekDigerGorevler, new { @class = "" })
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-4 control-label">
+                                        <h5>@Html.LabelFor(model => model.IstenilenNetUcret, new { @class = "yaziRenk" })</h5>
+                                    </div>
+                                    <div class="input-group col-lg-8">
+                                        @Html.TextBoxFor(model => model.IstenilenNetUcret, new { @class = "form-control", @placeholder = "Almak istediğiniz ücreti(net) yazınız..", @required = "required" })
+                                    </div>
+                                </div>
+
+                                <!-- Beyan-->
+                                <div class="col-lg-12 control-label">
+                                    <p style="color:darkseagreen;text-align: center;">Bu İş Başvuru Formunda verdiğim bilgilerin doğru ve kesin olduğunu, aksi halde müracaatımın veya iş akdimin ihbarsız ve tazminatsız iptalini kabul ettiğimi beyan ederim.</p>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-4 control-label">
+                                        <h5>@Html.LabelFor(model => model.Beyan, new { @class = "yaziRenk" })</h5>
+                                    </div>
+                                    <div class="input-group col-lg-8" required="required">
+                                        <label class="col-lg-6 col-md-6 col-sm-6">
+                                            @Html.RadioButtonFor(model => model.Beyan, "Kabul Etmiyorum", new { Checked = "checked" })
+                                            @Html.LabelFor(model => model.Beyan, "Kabul Etmiyorum")
+                                        </label>
+                                        <label class="col-lg-6 col-md-6 col-sm-6">
+                                            @Html.RadioButtonFor(model => model.Beyan, "Kabul Ediyorum", new { @checked = "checked" })
+                                            @Html.LabelFor(model => model.Beyan, "Kabul Ediyorum")
+                                        </label>
+                                    </div>
+                                    <hr />
+                                </div>
+
+
+                                <div class="col-lg-12 d-flex justify-content-between">
+                                    <input class="form-control btn-default circle buttonHizala" type="submit" value="Gönder" style="border-color:darkseagreen;color:darkgreen;font-size:medium"/>
+                                </div>
+                                <hr />
+
+                            </div>
+                        </div>
+                               
+                        <br />
+                    </fieldset>
+                }
+                
+</div>
+        </div>
+    </div>
+</section>
+
+<script type="text/javascript">
+    $("#txtTel").mask("(999) 999-9999");
+    $("#txtTC").mask("99999999999");
+    $("#txtVergiNo").mask("9999999999");
+
+</script>
+

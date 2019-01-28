@@ -1,0 +1,75 @@
+﻿@model TrafficKurye.Models.FooterMail
+    
+<footer class="footer-area section-gap">
+    <div class="container justify-content-between">
+        <div class="row">
+            <div class="col-lg-3 col-md-4" style="float:left;box-sizing:border-box;">
+                <div class="single-footer-widget">
+                    <ul class="footer-nav">
+                        <li>@Html.ActionLink("Posta Gönderi ve Tarifelerimiz", "PostaGonderiveTarifelerimiz", "Footer")</li>
+                        <li>@Html.ActionLink("Hizmet Kalitesi ve Sorumluluk", "HizmetKalitesiveSorumluluk", "Footer")</li>
+                        <li>@Html.ActionLink("Gönderi Türlerine Göre Teslim Süreleri", "GonderiTurlerineGoreTeslimSureleri", "Footer")</li>
+                        <li>@Html.ActionLink("Müşteri Memnuniyeti", "MusteriMemnuniyeti", "Footer")</li>
+                        <li>@Html.ActionLink("Öneri ve Şikayet Formu", "OneriVeSikayetFormu", "Home")</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4" style="box-sizing:border-box;">
+                <div class="single-footer-widget newsletter">
+                    <h6>Bizden Haberdar Olun!</h6>
+                    @using (Html.BeginForm("FooterEmailGonder", "Home", FormMethod.Post, new { @class = "form-area contact-form" }))
+                    {
+                        <div class="form-group row" style="width:100%;">
+                            <div class="col-lg-12 col-md-12" style="width:170px;height:50px;margin-bottom:10px;">
+                                <div class="input-group" style="border-radius:25px;">
+                                    @Html.TextBoxFor(model => model.EmailFooter, new { @class = "form-control", @placeholder = "E-mail adresiniz..", @type = "email", @required = ""})
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 d-flex justify-content-between" style="border-radius:25px;width:170px;height:50px;">
+                                <input class="form-control btn btn-light" type="submit" value="Gönder" style="color:#199449;border-color:darkgreen;" />
+                            </div>
+                        </div>
+                                    <br />
+                        if (ViewBag.sonuc == "danger" || ViewBag.sonuc == "info")
+                        {
+                            <div class="alert alert-@ViewBag.Sonuc" style="color:black;">
+                                @ViewBag.Mesaj
+                            </div>
+                        }
+                    }
+                </div>
+            </div>
+            <div class="col-lg-3  col-md-4" style="float:right;box-sizing:border-box;">
+                <div class="single-footer-widget">
+                    <ul class="footer-nav">
+                        <li>@Html.ActionLink("Kişisel Verilerin Korunması", "KisiselVerilerinKorunmasi", "Footer")</li>
+                        <li>@Html.ActionLink("Gizlilik", "Gizlilik", "Footer")</li>
+                        <li>@Html.ActionLink("Sorumluluk ve Tazminat", "SorumlulukveTazminat", "Footer")</li>
+                        <li>@Html.ActionLink("Yasal Uyarı", "YasalUyari", "Footer")</li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="col-lg-3" style="margin-top:10px;box-sizing:border-box;">
+                <div class="col-lg-12 col-md-12 footer-social" style="margin-bottom:25px;box-sizing:border-box;">
+                    <a href="https://www.facebook.com/Traffic-Kurye-178147862844289/"><i class="fa fa-facebook"></i></a>
+                    <a href="https://twitter.com/TrafficKurye"><i class="fa fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/traffickurye/?hl=tr"><i class="fa fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/company/alternatif-da%C4%9Fitim-traffickurye/"><i class="fa fa-linkedin"></i></a>
+                </div>
+                <div class="col-lg-12 col-md-12" style="box-sizing:border-box;">
+                    <p class="footer-text text-white" style="margin-left:50px;">
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        Copyright &copy;
+                        <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</footer>
+
+
+

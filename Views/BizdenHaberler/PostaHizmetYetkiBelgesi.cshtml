@@ -1,0 +1,75 @@
+﻿@model List<TrafficKurye.Models.ResimModel>
+@{
+    ViewBag.Title = "PostaHizmetYetkiBelgesi";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+<head>
+    <link href="~/Content/css/lightbox.min.css" rel="stylesheet" />
+</head>
+<style>
+    h2 {
+        color: darkgreen;
+    }
+
+    .konum {
+        float: left;
+        margin: 25px;
+    }
+</style>
+
+
+<section class="banner-area relative" id="home">
+    <div class="overlay overlay-bg"></div>
+    <div class="container">
+        <div class="row d-flex align-items-center justify-content-center">
+            <div class="about-content col-lg-12">
+                <h1 class="yaziRenk">
+                    Posta Hizmetleri Yetki Belgesi
+                </h1>
+                <p class="yaziRenk link-nav">@Html.ActionLink("Bizden Haberler", "BizdenHaberler", "Home", new { veri = ViewBag.IDi }, null)<span class="lnr lnr-arrow-right"></span>@Html.ActionLink("Posta Hizmetleri Yetki Belgesi", "PostaHizmetYetkiBelgesi", "BizdenHaberler", new { veri = ViewBag.ID }, null)</p>
+                @*<p class="text-white link-nav"><a href="Index">Anasayfa </a>  <span class="lnr lnr-arrow-right"></span>  <a href="BizdenHaberler">Bizden Haberler</a></p>*@
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="feature-area section-gap">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-12 col-md-12">
+                <div class="single-feature ">
+                    <a class="title d-flex flex-row"><h2>Posta Hizmetleri Yetki Belgesi</h2></a>
+                    <hr />
+                    <p style="font-size:medium;">
+                        2014 Eylül ayında başvuru yapmış olduğumuz Bilgi Teknolojileri ve İletişim Kurumu tarafından, “Posta Hizmetleri Yetki Belgesi” 01.12.2014 tarihinde şirketimize verilmiştir.
+
+                    </p>
+                    <br />
+
+                </div>
+            </div>
+
+            <div class="col-lg-12 col-md-12 div">
+                @{
+                    foreach (var resim in Model)
+                    {
+                        <div class="col-lg-3 col-md-6 konum">
+                            <a href="~/Content/HaberIcerikFotoları/PostaHizmetYetki/@resim.ImgUrl" class="b-link-stripe b-animate-go  swipebox" rel="lightbox">
+                                <div class="agile_work_grid w3_agileits_sub_work " style="width:150%;height:120%;">
+                                    <img src="~/Content/HaberIcerikFotoları/PostaHizmetYetki/@resim.ImgUrl" class="thumb img-thumbnail"  />
+                                </div>
+                            </a>
+
+                        </div>
+
+                    }
+                }
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<script src="~/Content/js/lightbox-plus-jquery.min.js"></script>

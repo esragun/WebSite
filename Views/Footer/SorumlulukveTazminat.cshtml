@@ -1,0 +1,71 @@
+﻿
+@{
+    ViewBag.Title = "SorumlulukveTazminat";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<style>
+    h2{
+        color:darkgreen;
+        border-bottom:1px solid darkseagreen;
+    }
+     p{
+        color:#458B74;
+        margin:auto;
+        font-size:medium;
+     }
+     h3{
+         color:seagreen;
+     }
+</style>
+
+<section class="banner-area relative" id="home">
+    <div class="overlay overlay-bg"></div>
+    <div class="container">
+        <div class="row d-flex align-items-center justify-content-center">
+            <div class="about-content col-lg-12">
+                <h1 class="yaziRenk">
+                    Müşteri Memnuniyeti
+                </h1>
+                <p class="yaziRenk link-nav text-center">@Html.ActionLink("Anasayfa", "Index", "Home", new { veri = ViewBag.IDi }, null)<span class="lnr lnr-arrow-right"></span>@Html.ActionLink("Sorumluluk ve Tazminat", "SorumlulukveTazminat", "Footer", new { veri = ViewBag.ID }, null)</p>
+                @*<p class="text-white link-nav"><a href="Index">Anasayfa </a>  <span class="lnr lnr-arrow-right"></span>  <a href="Hakkımızda"> Hakkımızda</a></p>*@
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="feature-area section-gap">
+    <div class="container">
+        <div class="row">
+
+            <section class="feature-area section-gap">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 div">
+                            <div class="single-feature">
+                                <div class="col-lg-12">
+                                        <h2>Sorumluluk ve Tazminat</h2>
+                                    <br />
+                                        <h3 style="font-style:italic;text-decoration:underline;">Sorumluluk</h3>
+                                        <br />
+                                            <p>Traffickurye hizmetleri ile ilgili görevlerin yerine getirilememesi halinde, 6475 sayılı Kanun, 6102 sayılı Kanun, 4925 sayılı Kanun, 6502 sayılı Tüketicinin Korunması Hakkında Kanun ve bu Usul ve Esaslarda belirtilen durumlar ile özel sözleşme/protokollerde belirlenen tazminat hadleri içinde sorumludur.</p>
+                                            <p>Tabiat ve mahiyetleri bakımından hasar (kırılma, bozulma, kokma) tehlikesi kuvvetli bulunan maddelerde zararın bu yüzden ileri geldiği kabul olunur. Ancak, gönderme sırasında alınacak özel bir tedbir için ek ücret alınmışsa, traffickurye sorumludur.</p>
+                                            <p>Kapsamı çalınmış veya hasara uğramış kayıtlı gönderilerin teslim alınması esnasında alıcı tarafından itirazi kayıt ileri sürülmüş ise ve yapılan tespitte de traffickurye’nin sorumluluğu ortaya çıkmışsa tazminat alma hakkı durumuna göre gönderici veya alıcıya geçer.</p>
+                                                                           
+                                    <br />
+                                    <h3 style="font-style:italic;text-decoration:underline;">Sorumluluktan Kurtulma</h3>
+                                    <br />
+                                            <p>Zıya, hasar ve gecikme, traffickurye’nin gerekli özeni göstermesine rağmen kaçınamayacağı ve sonuçlarını önleyemeyeceği sebeplerden meydana gelmişse, traffickurye sorumluluktan kurtulur.</p>
+                                            <p>Zıya, hasar veya teslimdeki gecikme, yetersiz ambalajlanma -doğal niteliğinden dolayı çabuk bozulacak kırılacak vb gönderiler, Mücbir sebeplerle kayıtların ve belgelerin elden çıkması yüzünden, gönderinin hak sahibine verildiği ispat edilemiyorsa ve sorumluluk da başka suretle tespit edilemiyorsa – Gönderinin içinde yasak maddelerin bulunması – Değer konulmuş veya sigortalı gönderiler içinde değerli bir şey bulunmadığı veya gönderiye hile ile gerçek değerinden fazla değer gösterildiğinin anlaşılması gibi nedenlerden kaynaklanıyorsa traffickurye sorumluluktan kurtulur</p>
+                                                                           
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</section>
+

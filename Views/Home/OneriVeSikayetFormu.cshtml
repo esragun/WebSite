@@ -1,0 +1,139 @@
+﻿@model TrafficKurye.Models.Form.OneriSikayetFormu
+@{
+    ViewBag.Title = "OneriVeSikayetFormu";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<script src="~/Content/js/jquery.maskedinput.min.js"></script>
+
+<section class="banner-area" id="home">
+    <div class="overlay overlay-bg"></div>
+    <div class="container">
+        <div class="row d-flex align-items-center justify-content-center">
+            <div class="about-content col-lg-12">
+                <h1 class="yaziRenk">
+                    Öneri ve Şikayet Formu
+                </h1>
+                <p class="yaziRenk link-nav">@Html.ActionLink("Anasayfa", "Index", "Home", new { veri = ViewBag.ID }, null)<span class="lnr lnr-arrow-right"></span>@Html.ActionLink("Öneri ve Şikayet Formu", "OneriVeSikayetFormu", "Home", new { veri = ViewBag.ID }, null)</p>
+                @*<p class="text-white link-nav"><a href="Index">Anasayfa </a>  <span class="lnr lnr-arrow-right"></span>  <a href="OneriVeSikayetFormu"> Öneri ve Şikayet Formu </a></p>*@
+            </div>
+        </div>
+    </div>
+</section>
+<section class="contact-page-area section-gap">
+    <div class="container ">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+
+                @using (Html.BeginForm("OneriVeSikayetFormu", "Home", FormMethod.Post, new { @class = "form-area contact-form form-control text-center" }))
+                {
+                    if (ViewBag.sonuc == "danger" || ViewBag.sonuc == "success")
+                    {
+                        <div class="alert alert-@ViewBag.Sonuc" style="color:black;">
+                            @ViewBag.Mesaj
+                        </div>
+                    }
+                    <fieldset>
+                        <div class="form-group">
+                            <br />
+                            <div class="row yaziRenk">
+
+                                <div class="col-lg-12 ">
+                                    <br />
+                                    <h4>@Html.Label("Öneri Ve Şikayet Formu", new { @class = "baslikRenk" }) </h4>
+                                    <hr />
+                                </div>
+                                    <div class="col-lg-12">
+                                        <div class="col-lg-4 control-label">
+                                            <h5>@Html.LabelFor(model => model.AdıSoyad, new { @class = "yaziRenk" })</h5>
+                                        </div>
+                                        <div class="input-group col-lg-8">
+                                            @Html.TextBoxFor(model => model.AdıSoyad, new { @class = "form-control", placeholder = "Adınızı ve soyadınızı giriniz..", type = "text", maxlength = "25" })
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-12">
+                                        <div class="col-lg-4 control-label">
+                                            <h5>@Html.LabelFor(model => model.EmailAdresi, new { @class = "yaziRenk" })</h5>
+                                        </div>
+                                        <div class="input-group col-lg-8">
+                                            @Html.TextBoxFor(model => model.EmailAdresi, new { @class = "form-control", @placeholder = "ornek@traffickurye.com", type = "email", maxlength = "30" })
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="col-lg-4 control-label">
+                                            <h5>@Html.LabelFor(model => model.TelNo, new { @class = "yaziRenk" })</h5>
+                                        </div>
+                                        <div class="col-lg-8 input-group">
+                                            @Html.TextBoxFor(model => model.TelNo, new { @class = "form-control", @placeholder = "ör:5554443322", @id = "txtTel" })
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-12">
+                                        <div class="col-lg-4 control-label">
+                                            <h5>@Html.LabelFor(model => model.GonderiBarkodNo, new { @class = "yaziRenk" })</h5>
+                                        </div>
+                                        <div class="col-lg-8 input-group">
+                                            @Html.TextBoxFor(model => model.GonderiBarkodNo, new { @class = "form-control", @placeholder = "Gönderi barkod numarasını giriniz" })
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-12 ">
+                                        <div class="col-lg-4 control-label">
+                                            <h5>@Html.LabelFor(model => model.BasvuruNedeni, new { @class = "yaziRenk" })</h5>                                            
+                                        </div>
+                                        <div class="input-group col-lg-8 text-left">
+                                            <label class="col-lg-12">
+                                                @Html.RadioButtonFor(model => model.BasvuruNedeni, "Teşekkür ve Memnuniyet")
+                                                @Html.LabelFor(model => model.BasvuruNedeni, "Teşekkür ve Memnuniyet")
+                                            </label>
+                                            <label class="col-lg-12">
+                                                @Html.RadioButtonFor(model => model.BasvuruNedeni, "Zarar gören gönderi")
+                                                @Html.LabelFor(model => model.BasvuruNedeni, "Zarar gören gönderi")
+                                            </label>
+                                            <label class="col-lg-12">
+                                                @Html.RadioButtonFor(model => model.BasvuruNedeni, "Teslim eden personel davranışı")
+                                                @Html.LabelFor(model => model.BasvuruNedeni, "Teslim eden personel davranışı")
+                                            </label>
+                                            <label class="col-lg-12">
+                                                @Html.RadioButtonFor(model => model.BasvuruNedeni, "Kayıp gönderi")
+                                                @Html.LabelFor(model => model.BasvuruNedeni, "Kayıp gönderi")
+                                            </label>
+                                            <label class="col-lg-12">
+                                                @Html.RadioButtonFor(model => model.BasvuruNedeni, "Zamanında teslimat sağlanması")
+                                                @Html.LabelFor(model => model.BasvuruNedeni, "Zamanında teslimat sağlanması")
+                                            </label>
+                                            <label class="col-lg-12">
+                                                @Html.RadioButtonFor(model => model.BasvuruNedeni, "Diğer")
+                                                @Html.LabelFor(model => model.BasvuruNedeni, "Diğer")
+                                            </label>
+                                            
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-12">
+                                        <div class="col-lg-4 control-label">
+                                            <h5>@Html.LabelFor(model => model.Mesaj, new { @class = "yaziRenk" })</h5>
+                                        </div>
+                                        <div class="col-lg-8 input-group ">
+                                            @Html.EditorFor(model => model.Mesaj, new { @placeholder = "Mesajınızı yazınız.", @required = "required" })
+                                        </div>
+                                    </div>
+
+                                <div class="col-lg-12 d-flex justify-content-between">
+                                    <input class="form-control btn-default circle buttonHizala" type="submit" value="Gönder" style="border-color:darkseagreen;color:darkgreen;font-size:medium" />
+                                </div>
+                                
+                            </div>
+                           
+                        </div>
+
+                    </fieldset>
+
+
+                    
+                }
+            </div>
+        </div>
+    </div>
+</section>

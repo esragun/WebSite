@@ -1,0 +1,77 @@
+﻿@model List<TrafficKurye.Models.ResimModel>
+@{
+    ViewBag.Title = "Deneme";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+<head>
+    <link href="~/Content/css/lightbox.min.css" rel="stylesheet" />
+</head>
+<style>
+    h2 {
+        color: darkgreen;
+    }
+
+    .konum {
+        float: left;
+        margin: 25px;
+    }
+</style>
+
+<section class="banner-area" id="home">
+    <div class="overlay overlay-bg"></div>
+    <div class="container">
+        <div class="row d-flex align-items-center justify-content-center">
+            <div class="about-content col-lg-12">
+                <h1 class="yaziRenk">
+                    Deneme
+                </h1>
+                <p class="yaziRenk link-nav">@Html.ActionLink("Anasayfa", "Index", "Home", new { veri = ViewBag.IDi }, null)<span class="lnr lnr-arrow-right"></span>@Html.ActionLink("Deneme", "Deneme", "Home", new { veri = ViewBag.ID }, null)</p>
+                @*<p class="text-white link-nav"><a href="Index">Anasayfa </a>  <span class="lnr lnr-arrow-right"></span>  <a href="BizdenHaberler">Bizden Haberler</a></p>*@
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Start products Area -->
+<section class="feature-area section-gap">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-12 col-md-12">
+
+                <div class="single-feature ">
+                    <a class="title d-flex flex-row"><h2>Bowling Turnuvası</h2></a>
+                    <hr />
+                    <p style="font-size:medium;">
+                        2012 Yaz Ayında Cevahir Alışveriş Merkezinde, Şirket Bowling Turnuvası yaklaşık 50 personelin katılımı ile düzenlendi.
+                    </p>
+                    <br />
+
+                </div>
+            </div>
+
+            <div class="col-lg-12 col-md-12 div">
+                @{
+                    foreach (var resim in Model)
+                    {
+                        <div class="col-lg-3 col-md-6 konum  img-thumbnail">
+                            <a href="~/Content/HaberIcerikFotoları/BowlingTurnuvasi/@resim.ImgUrl" class="b-link-stripe b-animate-go  swipebox" rel="lightbox">
+                                <div class="agile_work_grid w3_agileits_sub_work ">
+                                    <img src="~/Content/HaberIcerikFotoları/BowlingTurnuvasi/@resim.ImgUrl" alt="" class="img-responsive" style="width:100%;height:200px;" />
+                                </div>
+                            </a>
+
+                        </div>
+
+                    }
+                }
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- End products Area -->
+
+<script src="~/Content/js/lightbox-plus-jquery.min.js"></script>
+

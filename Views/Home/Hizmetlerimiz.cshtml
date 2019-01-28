@@ -1,0 +1,159 @@
+﻿
+@{
+    ViewBag.Title = "Hizmetlerimiz";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="~/Content/js/hizmetlerimiz.js"></script>
+<link href="~/Content/css/HizmetlerHareketliDiv.css" rel="stylesheet" />
+<style>    
+    h6{
+        /*color:#7CCD7C;*/
+        color:#458B74;
+        font-style:italic;
+        font-size:medium;
+        margin-top:5px;
+    }
+    p,ul,li{
+        /*color:#28a745;*/
+        /*color:#7CCD7C;*/
+        color:#458B74;
+        margin:auto;
+        font-size:medium;
+    }
+    h4{
+        color:#199449;
+        cursor: pointer;
+    }
+    .container{
+        font-size:1.1rem;
+    }
+</style>
+
+<!-- start banner Area -->
+<section class="banner-area" id="home">
+    <div class="overlay overlay-bg"></div>
+    <div class="container">
+        <div class="row d-flex align-items-center justify-content-center">
+            <div class="about-content col-lg-12">
+                <h1 class="yaziRenk">
+                    Hizmetlerimiz
+                </h1>
+                <p class="yaziRenk link-nav">@Html.ActionLink("Anasayfa", "Index", "Home", new { veri = ViewBag.IDi }, null)<span class="lnr lnr-arrow-right"></span>@Html.ActionLink("Hizmetlerimiz", "Hizmetlerimiz", "Home", new { veri = ViewBag.ID }, null)</p>
+                @*<p class="text-white link-nav"><a href="Index">Anasayfa </a>  <span class="lnr lnr-arrow-right"></span>  <a href="Hizmetlerimiz"> Hizmetlerimiz</a></p>*@
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End banner Area -->
+<!-- Start offered-service Area -->
+
+<!-- End offered-service Area -->
+<!-- Start feature Area -->
+<section class="feature-area section-gap">
+    <div class="container title d-flex flex-row">       
+        <div class="row ">
+            <div class="col-lg-12" id="div1" >                
+                <div class="single-feature " >
+                    <a id="tikla" class="title d-flex flex-row"><h4>E-TİCARET PAKET DAĞITIMI</h4></a>
+                    <div class="goster" style="display:none;">
+                        <br />
+                            <h6>E-Ticaret'te 81 ilde aynı gün teslim</h6>
+                            <p>Depolarınızın veya tedarikçilerinizin bulunduğu her ilde, E-Ticaret ürün dağıtım hizmeti verilmektedir.</p>
+                            <p>E-ticaret paket dağıtım; Aynı il içerisinde deponuzdan belirli saatlerde alınan ürünlerin, aynı gün alıcılarına teslim edilmesidir.E-Ticaret ürün dağıtım hizmetini, özel olarak yazılmış "TRAFFIC MOBILE" programı ile yapmakta ve sürecin eş zamanlı olarak izlenmesi ve takip edilmesini sağlamaktadır.</p>
+                    </div>
+                                           
+                </div>
+            </div>
+            <div class="col-lg-12" id="div2">
+                <div class="single-feature">
+                    <a id="tikla2"  class="title d-flex flex-row"><h4>SÖZLEŞME TOPLAMA HİZMETİ</h4></a>      
+                    <div class="goster2" style="display:none;">
+                        <br />
+                            <h6>Sözleşmede 81 ilde aynı gün imza, aynı gün aktivasyon</h6>                       
+                            
+                                <p>81 ilde sözleşme imzalatma ve toplama hizmeti verilmektedir.</p>
+                                <p>Sözleşme imzalatma ve toplama hizmeti randevu alınarak gerçekleştirilmektedir.Aynı gün içinde alınan randevular, ilgili adrese gidilerek evrak teslimatları yapılmaktadır. </p>
+                                <p>Sözleşme hizmeti özel olarak yazılmış "Traffic Mobile" programı ile yapılmakta olup, sürecin online olarak izlenmesi ve takip edilmesini sağlamaktadır. </p>
+                           
+                    </div>              
+                    
+                </div>
+            </div>
+            <div class="col-lg-12" id="div3">
+                <div class="single-feature">
+                    <a id="tikla3" class="title d-flex flex-row"><h4>ADRESLİ DAĞITIM</h4></a> 
+                    <div class="goster3" style="display:none;">
+                           <h6>81 ilde adresli dağıtım hizmeti verilmektedir</h6> 
+                        <p> Adresli dağıtım, aşağıdaki dağıtım şekillerinde yapılmaktadır.</p>
+                        <ol>
+                            <li>İmzalı Dağıtım</li>
+                            <li>Kişiye Özel İmzalı Dağıtım</li>
+                            <li>Kanıtlı Dağıtım</li>
+                        </ol>
+                    </div>                   
+                    
+                </div>
+            </div>
+            <div class="col-lg-12" id="div4">
+                <div class="single-feature">
+                    <a id="tikla4" class="title d-flex flex-row"><h4>INSERT DAĞITIM</h4></a>   
+                    <div class="goster4" style="display:none;">
+                        <h6>81 ilde adresli dağıtım hizmeti verilmektedir</h6> 
+                                <p>Insert dağıtımı, Door & Door, Apartman kapısı şeklinde yapılmaktadır.Kuryeler, dağıtımları eş zamanlı izlenebilen özel cihazlarla yapmaktadır.</p>
+                                
+                                <p>Insert dağıtım hizmeti, özel olarak yazılmış "Traffic Mobile" programı ile yapılmakta olup, sürecin online olarak izlenmesi ve takip edilmesini sağlamaktadır.</p>
+                            
+                    </div>                  
+                    
+                </div>
+            </div>
+            <div class="col-lg-12" id="div5">
+                <div class="single-feature">   
+                    <a id="tikla5" class="title d-flex flex-row"><h4>AVM LOJİSTİK</h4></a> 
+                    <div class="goster5" style="display:none;">
+                        <br />
+                            <h6>AVM içi taşımacılıkta bir ilk</h6>
+                                <p>Avm içi mağazalara gelen tüm gönderiler kayıt altına alınarak, mağazalara zamanında ve doğru teslim edilir.Hızlı hizmet sunarak, mağazalara ciro avantajı sağlanarak, müşteri memnuniyeti üst seviyelere çıkarılır.</p>
+                                
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="col-lg-12" id="div6">
+                <div class="single-feature">
+                    <a id="tikla6" class="title d-flex flex-row"><h4>MUHABERAT YÖNETİMİ</h4></a> 
+                    <div class="goster6" style="display:none;">
+                        <br />
+                        <h6>81 İlde adresli dağıtım hizmeti verilmektedir</h6> 
+                                <p>Firmanıza gelen ve giden tüm gönderiler (kargo, posta vs.) kayıt altına alınır.Farklı firmaların durmadan değişen elemanlarının şirkete girip çıkması önlenerek, Traffic Kurye tarafından teslim alınan gönderiler ilgili kişi ve departmanlara teslim edilerek, zamanında ve doğru teslim edilmesi sağlanır</p>
+                                <p>Muhaberat yönetimi hizmeti, özel olarak yazılmış "Traffic Mobile" programı ile yapılmakta olup, sürecin takip edilmesi sağlanmaktadır.</p>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="col-lg-12" id="div7">
+                <div class="single-feature">
+                    <a id="tikla7" class="title d-flex flex-row"><h4>EVRAK GERİ TOPLAMA</h4></a>
+                    <div class="goster7" style="display:none;">
+                        <h6>81 İlde adresli dağıtım hizmeti verilmektedir</h6> 
+                                <p>Şube ve bayilerden, alınması gereken evraklar barkodlu ve kontrol edilerek merkezinize ulaştırılması sağlanır.</p>
+                                <p>Evrak toplama hizmeti, özel olarak yazılmış "Traffic Mobile" programı ile yapılmakta olup, sürecin online olarak izlenmesi ve takip edilmesini sağlamaktadır.</p>
+                            
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="col-lg-12" id="div8">
+                <div class="single-feature">                   
+                    <p style="font-size:large;font-weight:600">@Html.ActionLink("EK HİZMETLER", "EkHizmetler", "Home", new { veri = ViewBag.IDi}, null)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End feature Area -->
+<!-- Start brand Area -->
+<!-- End brand Area -->	
+

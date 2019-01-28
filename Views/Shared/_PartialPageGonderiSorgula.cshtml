@@ -1,0 +1,91 @@
+﻿@model TrafficKurye.Models.GonderiSorgulama
+
+<head>
+    <link href="@Url.Content("../Content/css/bootstrap.css")"
+          rel="stylesheet" type="text/css" />
+</head>
+<style>
+    .baslikRenk {
+        color: #199449 !important;
+        opacity: 1;
+    }
+
+    .yaziRenk {
+        border-color: darkgreen;
+        color: darkseagreen;
+    }
+
+    .input-group {
+        margin-bottom: 25px;
+    }
+
+    .control-label {
+        float: left;
+        text-align: right;
+    }
+</style>
+
+<section class="contact-page-area section-gap">
+    <div class="container" style="margin-top:75px;">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+
+                @using (Html.BeginForm("GonderiSorgulama", "Home", FormMethod.Get, new { @class = "form-area contact-form text-center form-control request", action = "http://mvc.trafficmobile.net/api/trace/sis" }))
+                {
+                    <fieldset>
+                        <div class="form-group text-center request-form">
+                            <div class="col-lg-12">
+                                <br />
+                                <h4>@Html.Label("Gönderi Sorgula", new { @class = "baslikRenk" }) </h4>
+                                <hr />
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="col-lg-4 control-label">
+                                    <h5>@Html.LabelFor(model => model.orderID, new { @class = "yaziRenk" })</h5>
+                                </div>
+                                <div class="col-lg-8 input-group">
+                                    @Html.TextBoxFor(model => model.orderID, new { @class = "form-control ", @placeholder = "- - - - - -", @type = "text" , maxlength = "6" })
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="col-lg-4 control-label">
+                                    <h5>@Html.LabelFor(model => model.AcceptorGsm, new { @class = "yaziRenk " })</h5>
+                                </div>
+                                <div class="input-group col-lg-8">
+                                    @Html.TextBoxFor(model => model.AcceptorGsm, new { @class = "form-control ", @type = "text", @placeholder = "Ör:5554443322", maxlength = "10"})
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="col-lg-4 control-label">
+                                    <h5>@Html.LabelFor(model => model.AcceptorNameFL, new { @class = "yaziRenk " })</h5>
+                                </div>
+                                <div class="input-group col-lg-8">
+                                    @Html.TextBoxFor(model => model.AcceptorNameFL, new { @class = "form-control ", @placeholder = "İsminizin ilk iki harfini giriniz", @type = "text", @required = "", maxlength = "2", minlength = "2" })
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12 d-flex justify-content-between">
+                            <input class="form-control request-button" type="submit" value="Gönder" style="color:darkgreen;font-size:large;border-color:darkseagreen;margin-bottom:30px;margin-left:11px;margin-right:11px;" />
+                        </div>
+
+
+                    </fieldset>
+                
+                    if (ViewBag.sonuc == "danger" || ViewBag.sonuc == "success")
+                    {
+                        <div class="alert alert-@ViewBag.Sonuc" style="color:black;">
+                            @ViewBag.Mesaj
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+</section>
+<script type="text/javascript">
+    //$("#txtTel").mask("(999) 999-9999");
+    $(":input").inputmask();
+    $("#txtSiparis").mask("999999");
+    $("#txtTel").inputmask("(999) 999-9999");
+</script>
